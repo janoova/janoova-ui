@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import TemplatePostVariant01 from "@/components/templates/post/TemplatePostVariant01";
 
 export default async function Post({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const data = await getPostBySlug(slug);
   if (!data) {
     return notFound();
@@ -42,7 +42,7 @@ export default async function Post({ params }) {
 }
 
 export const generateMetadata = async ({ params }) => {
-  const { slug } = params;
+  const { slug } = await params;
   const data = await getPostBySlug(slug);
   if (!data) return {};
   return await getMetaData(data, `blog`);
