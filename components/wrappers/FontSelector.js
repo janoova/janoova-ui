@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Select from "react-select";
 
@@ -320,5 +320,9 @@ function FontSelectorContent() {
 }
 
 export default function FontSelector() {
-  return <FontSelectorContent />;
+  return (
+    <Suspense fallback={null}>
+      <FontSelectorContent />
+    </Suspense>
+  );
 }

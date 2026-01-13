@@ -1,9 +1,3 @@
-const redirects = [
-  {
-    source: "/blog/category",
-    destination: "/blog",
-    permanent: true,
-  },
-];
+const redirects = [];
 
 export default redirects;
