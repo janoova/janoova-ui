@@ -15,6 +15,7 @@ import TawkMessenger from "@/components/wrappers/TawkMessenger";
 import GTMTracker from "@/components/wrappers/GTMTracker";
 import { Suspense } from "react";
 import ForceRefreshLinks from "@/components/wrappers/ForceRefreshLinks";
+import FontSelector from "@/components/wrappers/FontSelector";
 
 const globalFont = Outfit({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
         <HeadingTagsDisplay />
         <SmoothScrollHandler />
         <RouteSubmenuReset />
+        <FontSelector />
         {/* <Analytics /> */}
         {/* <TawkMessenger
           propertyId="68ced175c4e82919233cb870"
