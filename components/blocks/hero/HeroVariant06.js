@@ -2,7 +2,6 @@
 import Button from "@/components/ui/Button";
 import Bounded from "@/components/wrappers/Bounded";
 import styled from "styled-components";
-import BlurryBlob from "@/components/ui/BlurryBlob";
 import Pill from "@/components/ui/Pill";
 import Image from "next/image";
 import urlFor from "@/lib/imageUrlBuilder";

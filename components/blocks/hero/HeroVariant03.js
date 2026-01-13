@@ -73,7 +73,10 @@ const HeroVariant03 = ({ data = {}, index }) => {
             <ConditionalBlurFade enabled={data?.enable_animations} delay={0.2}>
               <div className="c__button-wrapper mt-[2rem]">
                 <div
-                  className={`flex flex-col gap-[12px] min-[500px]:flex-row justify-center`}
+                  className={cn(
+                    `flex flex-col gap-[12px] min-[500px]:flex-row`,
+                    `${data.align_left ? `justify-start` : `justify-center`}`
+                  )}
                 >
                   {data.button_title && (
                     <Button
