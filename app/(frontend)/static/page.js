@@ -1,3 +1,4 @@
+import HeroVariant08 from "@/components/blocks/hero/HeroVariant08";
 import React from "react";
 
 export const metadata = {
@@ -8,7 +9,11 @@ export const metadata = {
 };
 
 const page = () => {
-  return <>Hi!</>;
+  return (
+    <>
+      <HeroVariant08 />
+    </>
+  );
 };
 
 export default page;
