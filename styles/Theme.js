@@ -21,13 +21,13 @@ const BrandingTheme = css`
     --t-heading-letter-spacing: 0px;
     --t-body-line-height: 1.5;
     --t-body-letter-spacing: 0px;
-    --t-font-family-system: system-ui, -apple-system, BlinkMacSystemFont,
-      “Segoe UI”, Roboto, Oxygen-Sans, Ubuntu, Cantarell, “Helvetica Neue”,
-      Arial, sans-serif;
-    --t-font-family-heading: var(--t-font-family--outfit),
-      var(--t-font-family-system);
-    --t-font-family-body: var(--t-font-family--outfit),
-      var(--t-font-family-system);
+    --t-font-family-system:
+      system-ui, -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, “Helvetica Neue”, Arial, sans-serif;
+    --t-font-family-heading:
+      var(--t-font-family--outfit), var(--t-font-family-system);
+    --t-font-family-body:
+      var(--t-font-family--outfit), var(--t-font-family-system);
     --t-font-weight-heading: 700;
     --t-font-weight-button: 700;
     --t-font-family-button: var(--t-font-family-heading);
@@ -94,13 +94,16 @@ const BrandingTheme = css`
     --t-form-select-selected-color: #f4f4f5;
     // Box shadows
     --t-box-shadow-xs: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    --t-box-shadow-sm: 0px 1px 3px rgba(16, 24, 40, 0.1),
-      0px 1px 2px rgba(16, 24, 40, 0.06);
-    --t-box-shadow-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    --t-box-shadow-sm:
+      0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+    --t-box-shadow-md:
+      0px 4px 8px -2px rgba(16, 24, 40, 0.1),
       0px 2px 4px -2px rgba(16, 24, 40, 0.06);
-    --t-box-shadow-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    --t-box-shadow-lg:
+      0px 12px 16px -4px rgba(16, 24, 40, 0.08),
       0px 4px 6px -2px rgba(16, 24, 40, 0.03);
-    --t-box-shadow-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+    --t-box-shadow-xl:
+      0px 20px 24px -4px rgba(16, 24, 40, 0.08),
       0px 8px 8px -4px rgba(16, 24, 40, 0.03);
     --t-box-shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
     --t-box-shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
@@ -150,13 +153,13 @@ const WireframingTheme = css`
     --t-heading-letter-spacing: 0px;
     --t-body-line-height: 1.5;
     --t-body-letter-spacing: 0px;
-    --t-font-family-system: system-ui, -apple-system, BlinkMacSystemFont,
-      “Segoe UI”, Roboto, Oxygen-Sans, Ubuntu, Cantarell, “Helvetica Neue”,
-      Arial, sans-serif;
-    --t-font-family-heading: var(--t-font-family--outfit),
-      var(--t-font-family-system);
-    --t-font-family-body: var(--t-font-family--outfit),
-      var(--t-font-family-system);
+    --t-font-family-system:
+      system-ui, -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto,
+      Oxygen-Sans, Ubuntu, Cantarell, “Helvetica Neue”, Arial, sans-serif;
+    --t-font-family-heading:
+      var(--t-font-family--outfit), var(--t-font-family-system);
+    --t-font-family-body:
+      var(--t-font-family--outfit), var(--t-font-family-system);
     --t-font-weight-heading: 700;
     --t-font-weight-button: 700;
     --t-font-family-button: var(--t-font-family-heading);
@@ -223,13 +226,16 @@ const WireframingTheme = css`
     --t-form-select-selected-color: #f4f4f5;
     // Box shadows
     --t-box-shadow-xs: 0px 1px 2px rgba(16, 24, 40, 0.05);
-    --t-box-shadow-sm: 0px 1px 3px rgba(16, 24, 40, 0.1),
-      0px 1px 2px rgba(16, 24, 40, 0.06);
-    --t-box-shadow-md: 0px 4px 8px -2px rgba(16, 24, 40, 0.1),
+    --t-box-shadow-sm:
+      0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+    --t-box-shadow-md:
+      0px 4px 8px -2px rgba(16, 24, 40, 0.1),
       0px 2px 4px -2px rgba(16, 24, 40, 0.06);
-    --t-box-shadow-lg: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    --t-box-shadow-lg:
+      0px 12px 16px -4px rgba(16, 24, 40, 0.08),
       0px 4px 6px -2px rgba(16, 24, 40, 0.03);
-    --t-box-shadow-xl: 0px 20px 24px -4px rgba(16, 24, 40, 0.08),
+    --t-box-shadow-xl:
+      0px 20px 24px -4px rgba(16, 24, 40, 0.08),
       0px 8px 8px -4px rgba(16, 24, 40, 0.03);
     --t-box-shadow-2xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
     --t-box-shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
@@ -258,11 +264,94 @@ const WireframingTheme = css`
   }
 `;
 
+// Starter Theme Overrides
+const starterThemes = {
+  law: css`
+    :root {
+      --t-primary-branding-color: #203e42;
+      --t-primary-branding-hover-color: #152a2dff;
+      --t-secondary-branding-color: #744210;
+      --t-secondary-branding-hover-color: #975a16;
+      --t-border-color: #eee;
+      --t-light-background-color: #fffaf7;
+      --t-font-family-heading:
+        var(--t-font-family--lora), var(--t-font-family-system);
+      --t-font-family-body:
+        var(--t-font-family--lora), var(--t-font-family-system);
+      --t-font-weight-heading: 400;
+    }
+  `,
+  medical: css`
+    :root {
+      --t-primary-branding-color: #0369a1;
+      --t-primary-branding-hover-color: #0284c7;
+      --t-secondary-branding-color: #059669;
+      --t-secondary-branding-hover-color: #10b981;
+      --t-heading-color: #1e293b;
+      --t-body-color: #334155;
+      --t-light-background-color: #f0f9ff;
+      --t-blob-color-1: #0369a1;
+      --t-blob-color-2: #06b6d4;
+      --t-blob-color-3: #059669;
+      --t-blob-color-4: #8b5cf6;
+    }
+  `,
+  restaurant: css`
+    :root {
+      --t-primary-branding-color: #dc2626;
+      --t-primary-branding-hover-color: #ef4444;
+      --t-secondary-branding-color: #ea580c;
+      --t-secondary-branding-hover-color: #f97316;
+      --t-heading-color: #18181b;
+      --t-body-color: #27272a;
+      --t-light-background-color: #fef2f2;
+      --t-blob-color-1: #dc2626;
+      --t-blob-color-2: #ea580c;
+      --t-blob-color-3: #f59e0b;
+      --t-blob-color-4: #eab308;
+    }
+  `,
+  // Add more starter themes here...
+};
+
+// Get the active starter theme
+const getActiveStarterTheme = () => {
+  if (typeof window === "undefined") return null;
+
+  const pathname = window.location.pathname;
+  const starterMatch = pathname.match(/\/starters\/([^\/]+)/);
+
+  if (starterMatch && starterMatch[1]) {
+    const starterSlug = starterMatch[1];
+    return starterThemes[starterSlug] || null;
+  }
+
+  return null;
+};
+
+// Check for default theme query param
 const hasDefaultTheme =
   typeof window !== "undefined" &&
   new URLSearchParams(window.location.search).has("default_theme");
 
-// Export the appropriate theme
-const Theme = hasDefaultTheme ? WireframingTheme : BrandingTheme;
+// Build the theme
+const buildTheme = () => {
+  if (hasDefaultTheme) {
+    return WireframingTheme;
+  }
+
+  const starterTheme = getActiveStarterTheme();
+
+  if (starterTheme) {
+    return css`
+      ${BrandingTheme}
+      ${starterTheme}
+    `;
+  }
+
+  return BrandingTheme;
+};
+
+const Theme = buildTheme();
 
 export default Theme;

@@ -7,6 +7,7 @@ import RichtextField from "@/components/ui/RichtextField";
 import { cn } from "@/lib/utils";
 import { BackgroundPattern } from "@/components/ui/BackgroundPatterns";
 import { ConditionalBlurFade } from "@/components/ui/RevealAnimations";
+import { getCleanValue } from "@/lib/helpers";
 
 const Wrapper = styled.div`
   .b__content__variant04 {
@@ -35,7 +36,7 @@ const ContentVariant04 = ({ data = {}, index }) => {
       )}
       <Wrapper
         style={{
-          "--content-max-width": `${data.content_max_width || 900}px`,
+          "--content-max-width": `${getCleanValue(data.content_max_width) || 900}px`,
         }}
       >
         <div className="container">

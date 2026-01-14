@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   .b__content__variant01 {
     &__row {
       --bs-gutter-x: 2rem;
-      --bs-gutter-y: 1.5rem;
+      --bs-gutter-y: 0rem;
       @media (min-width: 1200px) {
         --bs-gutter-x: 4rem;
       }
@@ -45,8 +45,11 @@ const ContentVariant01 = ({ data = {}, index }) => {
           <div className="row b__content__variant01__row">
             <div className="col-lg-4">
               <ConditionalBlurFade enabled={data.enable_animations} delay={0}>
-                <div className="c__heading-wrapper mb-[1rem]">
-                  <Heading tag={data.heading_tag || "h2"} className={`u__h2`}>
+                <div className="c__heading-wrapper mb-[1rem] lg:mb-[0]">
+                  <Heading
+                    tag={data.heading_tag || "h2"}
+                    className={`u__h2 mb-[0]`}
+                  >
                     {data.heading}
                   </Heading>
                 </div>

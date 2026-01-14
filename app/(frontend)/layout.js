@@ -16,6 +16,7 @@ import GTMTracker from "@/components/wrappers/GTMTracker";
 import { Suspense } from "react";
 import ForceRefreshLinks from "@/components/wrappers/ForceRefreshLinks";
 import FontSelector from "@/components/wrappers/FontSelector";
+import DynamicFontLoader from "@/components/wrappers/DynamicFontLoader";
 
 const globalFont = Outfit({
   subsets: ["latin"],
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
         <SmoothScrollHandler />
         <RouteSubmenuReset />
         <FontSelector />
+        <DynamicFontLoader />
         {/* <Analytics /> */}
         {/* <TawkMessenger
           propertyId="68ced175c4e82919233cb870"

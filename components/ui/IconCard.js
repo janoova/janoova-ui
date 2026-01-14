@@ -114,7 +114,9 @@ const IconCard = ({
           </div>
         )}
         {heading && (
-          <div className="c__icon-card__heading-wrapper">
+          <div
+            className={`c__icon-card__heading-wrapper ${icon?.src || iconSvg ? `` : `mb-[0.5rem]`}`}
+          >
             <Heading
               tag={headingTag || `h3`}
               className="c__icon-card__heading u__h5"
