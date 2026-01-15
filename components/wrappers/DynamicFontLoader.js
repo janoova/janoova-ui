@@ -2,26 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-
-// Font configurations for each starter
-const starterFonts = {
-  law: {
-    family: "Lora",
-    weights: ["400", "700"],
-    variable: "--t-font-family--lora",
-  },
-  medical: {
-    family: "Inter",
-    weights: ["400", "600", "700"],
-    variable: "--t-font-family--inter",
-  },
-  restaurant: {
-    family: "Playfair Display",
-    weights: ["400", "700"],
-    variable: "--t-font-family--playfair",
-  },
-  // Add more starter fonts here...
-};
+import { STARTER_CONFIGS } from "@/lib/starterConfig";
 
 export default function DynamicFontLoader() {
   const pathname = usePathname();
@@ -33,9 +14,11 @@ export default function DynamicFontLoader() {
     if (!starterMatch || !starterMatch[1]) return;
 
     const starterSlug = starterMatch[1];
-    const fontConfig = starterFonts[starterSlug];
+    const starterConfig = STARTER_CONFIGS[starterSlug];
 
-    if (!fontConfig) return;
+    if (!starterConfig || !starterConfig.font) return;
+
+    const fontConfig = starterConfig.font;
 
     // Check if font is already loaded
     const existingLink = document.querySelector(
