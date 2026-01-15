@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import { stegaClean } from "@sanity/client/stega";
 import { Phone } from "lucide-react";
 import { getStarterConfig, STARTER_LOGO_SVG } from "@/lib/starterConfig";
+import ForceRefreshStarter from "@/components/wrappers/ForceRefreshStarter";
 
 const updateActiveStatusByKey = (data, uid) => {
   if (!data || !Array.isArray(data)) return [];
@@ -197,6 +198,7 @@ const HeaderVariantStarter = () => {
 
   return (
     <>
+      <ForceRefreshStarter basePath={basePath} />
       <header className="b__header__variant01 b__header__variant01--glass b__header__variant01--sticky">
         <div className="container">
           <Button
