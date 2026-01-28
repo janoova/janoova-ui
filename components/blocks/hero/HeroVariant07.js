@@ -20,13 +20,13 @@ const HeroVariant07 = ({ data = {}, index }) => {
       className={`b__hero__variant07 py-0 overflow-hidden relative`}
     >
       <div
-        className={`b__hero__variant07__block-wrapper relative px-[0] py-[7rem] [@media(min-width:992px)]:px-[1.5rem] [@media(min-width:992px)]:py-[160px] [@media(min-width:992px)]:m-4 [@media(min-width:992px)]:rounded-3xl [@media(min-width:992px)]:overflow-hidden ${data.background_theme && `u__background-${getCleanValue(data.background_theme)}`}`}
+        className={`b__hero__variant07__block-wrapper relative px-[0] py-[5rem] sm:py-[7rem] [@media(min-width:992px)]:px-[1.5rem] [@media(min-width:992px)]:py-[160px] [@media(min-width:992px)]:m-4 [@media(min-width:992px)]:rounded-3xl [@media(min-width:992px)]:overflow-hidden ${data.background_theme && `u__background-${getCleanValue(data.background_theme)}`}`}
       >
         {data?.enable_background_pattern && (
           <BackgroundPattern
             patternType={data?.background_pattern_type ?? `dots`}
             className={cn(
-              "[mask-image:radial-gradient(circle_at_center,white,transparent_70%)]"
+              "[mask-image:radial-gradient(circle_at_center,white,transparent_70%)]",
             )}
           />
         )}
@@ -42,7 +42,7 @@ const HeroVariant07 = ({ data = {}, index }) => {
           <div
             className={cn(
               `${data.align_left ? `text-left` : `text-center`}`,
-              invertTextClassName
+              invertTextClassName,
             )}
           >
             {data.heading && (
@@ -85,7 +85,7 @@ const HeroVariant07 = ({ data = {}, index }) => {
                   <div
                     className={cn(
                       `flex flex-col gap-[12px] min-[500px]:flex-row`,
-                      `${data.align_left ? `justify-start` : `justify-center`}`
+                      `${data.align_left ? `justify-start` : `justify-center`}`,
                     )}
                   >
                     {data.button_title && (
