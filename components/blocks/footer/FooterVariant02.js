@@ -14,6 +14,8 @@ import styled from "styled-components";
 import Description from "@/components/ui/Description";
 import Link from "next/link";
 import RichtextField from "@/components/ui/RichtextField";
+import { useTheme } from "@/components/wrappers/ThemeProvider";
+import { Sun, Moon } from "lucide-react";
 
 const Wrapper = styled.div`
   .b__footer__variant02 {
@@ -32,6 +34,8 @@ const FooterVariant02 = ({
   navigationSchema,
   copyright = `© ${new Date().getFullYear()} ${organization}. All rights reserved.`,
 }) => {
+  const { isDark, toggleTheme } = useTheme();
+
   const socialLinks = [
     {
       icon: <FaInstagram className="size-5" />,
@@ -148,7 +152,7 @@ const FooterVariant02 = ({
         </div>
         <div className="text-muted-foreground mt-[3rem] pt-[1rem] md:pt-[2rem] flex flex-col justify-between gap-4 border-t text-xs font-medium md:flex-row md:items-center md:text-left">
           <p className="order-2 lg:order-1">{copyright}</p>
-          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
+          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row md:items-center">
             {legalLinks.map((elem, idx) => {
               if (elem?.href) {
                 return (
@@ -163,6 +167,18 @@ const FooterVariant02 = ({
                 );
               }
             })}
+            {siteSettings?.enable_dark_mode && (
+              <li>
+                <button
+                  onClick={toggleTheme}
+                  aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                  className="hover:text-primary flex items-center gap-1.5 transition-colors"
+                >
+                  {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+                  {isDark ? "Light" : "Dark"}
+                </button>
+              </li>
+            )}
           </ul>
         </div>
       </Wrapper>

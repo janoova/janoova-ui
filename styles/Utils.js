@@ -122,17 +122,17 @@ const Utils = css`
         }
       }
       &-inverted {
-        color: var(--t-cp-base-white);
+        color: var(--t-inverted-text-color);
         h1,
         h2,
         h3,
         h4,
         h5,
         h6 {
-          color: var(--t-cp-base-white);
+          color: var(--t-inverted-text-color);
         }
         a {
-          color: var(--t-cp-base-white);
+          color: var(--t-inverted-text-color);
         }
       }
     }

@@ -1,6 +1,6 @@
 "use client";
 import { createGlobalStyle, css } from "styled-components";
-import Theme from "./Theme";
+import Theme, { DarkTheme } from "./Theme";
 import Utils from "./Utils";
 
 const Styles = css`
@@ -180,6 +180,7 @@ const Styles = css`
 
 const GlobalStyles = createGlobalStyle`
   ${Theme}
+  ${DarkTheme}
   ${Styles}
   ${Utils}
 `;

@@ -36,7 +36,7 @@ const TestimonialVariant01 = ({ data = {}, index }) => {
         <BackgroundPattern
           patternType={data.background_pattern_type ?? `dots`}
           className={cn(
-            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
+            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]",
           )}
         />
       )}
@@ -62,7 +62,7 @@ const TestimonialVariant01 = ({ data = {}, index }) => {
                 <div className="c__heading-wrapper mb-[3rem] max-w-[1000px] mx-auto">
                   <Heading
                     tag={data?.heading_tag || "span"}
-                    className={`u__h3 mb-0`}
+                    className={`u__h3 mb-0 u__heading-color`}
                   >
                     {data.heading}
                   </Heading>
@@ -86,7 +86,10 @@ const TestimonialVariant01 = ({ data = {}, index }) => {
             {data.person_name && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0.3}>
                 <div className="c__heading-wrapper mb-[0.1rem]">
-                  <Heading tag={`span`} className={`u__h6 mb-0`}>
+                  <Heading
+                    tag={`span`}
+                    className={`u__h6 mb-0 u__heading-color`}
+                  >
                     {data.person_name}
                   </Heading>
                 </div>

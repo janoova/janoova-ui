@@ -17,6 +17,12 @@ const Component = styled.div`
       object-fit: contain;
     }
   }
+  .dark & {
+    .c__partner-logo__image {
+      filter: brightness(0) invert(1);
+      opacity: 0.7;
+    }
+  }
 `;
 
 const PartnerLogo = ({ image, className }) => {

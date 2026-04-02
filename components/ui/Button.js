@@ -59,12 +59,12 @@ const Component = styled.div`
             }
             &__arrow-icon {
               svg path {
-                stroke: var(--t-cp-base-white);
+                stroke: var(--t-inverted-text-color);
               }
             }
             &__icon {
               svg path {
-                stroke: var(--t-cp-base-white);
+                stroke: var(--t-inverted-text-color);
               }
             }
             &__loading-icon {
@@ -115,7 +115,7 @@ const Component = styled.div`
       }
       &--primary {
         background: var(--t-primary-branding-color);
-        color: var(--t-cp-base-white);
+        color: var(--t-inverted-text-color);
         border-color: var(--t-primary-branding-color);
         &:hover {
           background: var(--t-primary-branding-hover-color);
@@ -124,7 +124,7 @@ const Component = styled.div`
       }
       &--secondary {
         background: var(--t-secondary-branding-color);
-        color: var(--t-cp-base-white);
+        color: var(--t-inverted-text-color);
         border-color: var(--t-secondary-branding-color);
         &:hover {
           background: var(--t-secondary-branding-hover-color);
@@ -138,7 +138,7 @@ const Component = styled.div`
           color: var(--t-primary-branding-color);
           &:hover {
             background: var(--t-primary-branding-color);
-            color: var(--t-cp-base-white);
+            color: var(--t-inverted-text-color);
             border-color: var(--t-primary-branding-color);
           }
         }
@@ -148,7 +148,7 @@ const Component = styled.div`
           color: var(--t-secondary-branding-color);
           &:hover {
             background: var(--t-secondary-branding-color);
-            color: var(--t-cp-base-white);
+            color: var(--t-inverted-text-color);
             border-color: var(--t-secondary-branding-color);
           }
         }
@@ -205,7 +205,7 @@ const Component = styled.div`
         background: var(--t-cp-base-white);
         color: var(--t-primary-branding-color);
         &:hover {
-          background: #eee;
+          background: var(--t-border-color);
         }
       }
     }

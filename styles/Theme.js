@@ -1,5 +1,43 @@
 import { css } from "styled-components";
 
+const DarkTheme = css`
+  .dark {
+    // Typography
+    --t-heading-color: #fafafa;
+    --t-body-color: #a1a1aa;
+    --t-light-text-color: #71717a;
+    // Surfaces
+    --t-cp-base-white: #09090b;
+    --t-cp-base-black: #fafafa;
+    // Misc
+    --t-border-color: #3f3f46;
+    --t-light-background-color: #18181b;
+    --t-pagination-button-color: #27272a;
+    --t-pagination-button-hover-color: #3f3f46;
+    // Form
+    --t-form-label-color: #e4e4e7;
+    --t-form-input-border-color: #3f3f46;
+    --t-form-placeholder-color: #52525b;
+    --t-form-select-selected-color: #27272a;
+    // Glass header
+    --t-header-glass-bg: rgba(9, 9, 11, 0.85);
+    // Box shadows (dark surfaces need higher-opacity dark shadows)
+    --t-box-shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.4);
+    --t-box-shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.4);
+    --t-box-shadow-md: 0px 4px 8px -2px rgba(0, 0, 0, 0.5), 0px 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --t-box-shadow-lg: 0px 12px 16px -4px rgba(0, 0, 0, 0.5), 0px 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --t-box-shadow-xl: 0px 20px 24px -4px rgba(0, 0, 0, 0.5), 0px 8px 8px -4px rgba(0, 0, 0, 0.3);
+    --t-box-shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.6);
+    --t-box-shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.55);
+  }
+
+  // Header: remove border-bottom and fix the hardcoded light shadow
+  .dark .b__header__variant01 {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+`;
+
 const BrandingTheme = css`
   :root {
     // Theme colors
@@ -117,6 +155,10 @@ const BrandingTheme = css`
     --t-pagination-button-hover-color: #faf5f2;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
+    // Header
+    --t-header-glass-bg: rgba(255, 255, 255, 0.8);
+    // Inverted text (e.g. white text on dark/colored backgrounds — stays light in all modes)
+    --t-inverted-text-color: #ffffff;
     // Blobs
     --t-blob-color-1: var(--t-primary-branding-color);
     --t-blob-color-2: #28ffea;
@@ -354,4 +396,5 @@ const buildTheme = () => {
 
 const Theme = buildTheme();
 
+export { DarkTheme };
 export default Theme;

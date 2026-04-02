@@ -26,6 +26,14 @@ export default defineType({
       group: "general",
     }),
     defineField({
+      name: "enable_dark_mode",
+      title: "Enable Dark Mode",
+      description: "Show a dark/light mode toggle in the footer.",
+      type: "boolean",
+      initialValue: false,
+      group: "general",
+    }),
+    defineField({
       name: "header_button_title",
       title: "Header Button Title",
       type: "string",
