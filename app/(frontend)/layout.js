@@ -14,7 +14,7 @@ import { Analytics } from "@vercel/analytics/next";
 import GTMTracker from "@/components/wrappers/GTMTracker";
 import { Suspense } from "react";
 import ForceRefreshLinks from "@/components/wrappers/ForceRefreshLinks";
-import FontSelector from "@/components/wrappers/FontSelector";
+import FontSelectorGate from "@/components/wrappers/FontSelectorGate";
 import DynamicFontLoader from "@/components/wrappers/DynamicFontLoader";
 import ThemeProvider from "@/components/wrappers/ThemeProvider";
 
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
         <HeadingTagsDisplay />
         <SmoothScrollHandler />
         <RouteSubmenuReset />
-        <FontSelector />
+        <FontSelectorGate />
         <DynamicFontLoader />
         {/* <Analytics /> */}
         {/* <TawkMessenger
