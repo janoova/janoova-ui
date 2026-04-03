@@ -17,6 +17,15 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io", "ik.imagekit.io"],
   },
+  experimental: {
+    optimizePackageImports: [
+      "react-icons",
+      "lucide-react",
+      "@sanity/icons",
+      "motion",
+      "framer-motion",
+    ],
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);
