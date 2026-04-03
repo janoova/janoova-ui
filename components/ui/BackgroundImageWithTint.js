@@ -17,7 +17,8 @@ const BackgroundImageWithTint = ({
             blurDataURL={blurDataURL}
             src={src}
             alt={alt ?? ""}
-            sizes="100%"
+            sizes="100vw"
+            priority
           />
         </div>
       )}

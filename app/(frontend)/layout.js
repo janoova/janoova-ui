@@ -11,7 +11,6 @@ import SmoothScrollHandler from "@/components/wrappers/SmoothScrollHandler";
 import RouteSubmenuReset from "@/components/wrappers/RouteSubmenuReset";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
-import TawkMessenger from "@/components/wrappers/TawkMessenger";
 import GTMTracker from "@/components/wrappers/GTMTracker";
 import { Suspense } from "react";
 import ForceRefreshLinks from "@/components/wrappers/ForceRefreshLinks";

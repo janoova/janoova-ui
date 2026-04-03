@@ -21,7 +21,6 @@
     "@sanity/visual-editing": "^5.0.4",
     "@superside-oss/sanity-plugin-copy-paste": "^1.0.3",
     "@tailwindcss/postcss": "^4.1.8",
-    "@tawk.to/tawk-messenger-react": "^2.0.2",
     "@vercel/analytics": "^1.5.0",
     "axios": "^1.7.5",
     "bootstrap": "^5.3.3",
