@@ -13,7 +13,11 @@ import { getCleanValue, parseArrayString } from "@/lib/helpers";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import RichtextField from "@/components/ui/RichtextField";
-import { BorderBeam } from "@/components/magicui/border-beam";
+import dynamic from "next/dynamic";
+const BorderBeam = dynamic(
+  () => import("@/components/magicui/border-beam").then((m) => ({ default: m.BorderBeam })),
+  { ssr: false }
+);
 import { fallbackImageBlurDataUrl } from "@/lib/constants";
 
 const Wrapper = styled.div`

@@ -7,7 +7,11 @@ import Heading from "./Heading";
 import Description from "./Description";
 import { cn } from "@/lib/utils";
 import { getCleanValue } from "@/lib/helpers";
-import { BorderBeam } from "@/components/magicui/border-beam";
+import dynamic from "next/dynamic";
+const BorderBeam = dynamic(
+  () => import("@/components/magicui/border-beam").then((m) => ({ default: m.BorderBeam })),
+  { ssr: false }
+);
 
 const Component = styled.div`
   padding: 2rem 1.5rem;
