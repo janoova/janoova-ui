@@ -1,5 +1,5 @@
 {
-  "name": "rumiui-sanity",
+  "name": "janoova-ui",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formspark/use-formspark": "^0.1.42",
-    "@next/third-parties": "^15.4.5",
+"@next/third-parties": "^15.4.5",
     "@portabletext/react": "^6.0.2",
     "@radix-ui/react-dialog": "^1.1.15",
     "@sanity/client": "^7.14.0",

@@ -1,6 +1,11 @@
 import { getMetaData } from "@/lib/seo";
-import { getPostBySlug } from "@/sanity/utils/queries";
+import { getPostBySlug, getAllPostSlugs } from "@/sanity/utils/queries";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const posts = await getAllPostSlugs();
+  return posts.filter((p) => p.slug).map((p) => ({ slug: p.slug }));
+}
 import TemplatePostVariant01 from "@/components/templates/post/TemplatePostVariant01";
 
 export default async function Post({ params }) {

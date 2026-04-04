@@ -1,8 +1,13 @@
 import TemplateArchiveVariant01 from "@/components/templates/archive/TemplateArchiveVariant01";
 import { organization } from "@/lib/constants";
 import { getMetaData } from "@/lib/seo";
-import { getPostsByCategory, getCategoryBySlug } from "@/sanity/utils/queries";
+import { getPostsByCategory, getCategoryBySlug, getAllCategorySlugs } from "@/sanity/utils/queries";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const categories = await getAllCategorySlugs();
+  return categories.filter((c) => c.slug).map((c) => ({ slug: c.slug }));
+}
 import { generateBlogMetaData } from "@/lib/constants";
 
 export default async function BlogCategoryArchive({ params }) {

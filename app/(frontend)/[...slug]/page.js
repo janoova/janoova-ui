@@ -1,7 +1,14 @@
 import PageBuilder from "@/components/wrappers/PageBuilder";
 import { getMetaData } from "@/lib/seo";
-import { getPageBySlug } from "@/sanity/utils/queries";
+import { getPageBySlug, getAllPageSlugs } from "@/sanity/utils/queries";
 import { notFound } from "next/navigation";
+
+export async function generateStaticParams() {
+  const pages = await getAllPageSlugs();
+  return pages
+    .filter((p) => p.slug && p.slug !== "index")
+    .map((p) => ({ slug: p.slug.split("/") }));
+}
 
 export default async function Page({ params }) {
   const { slug } = await params;

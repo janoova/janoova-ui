@@ -5,6 +5,14 @@ import { getMetaData } from "@/lib/seo";
 import { getPosts, getPostsCount } from "@/sanity/utils/queries";
 import { notFound } from "next/navigation";
 import { redirect } from "next/navigation";
+
+export async function generateStaticParams() {
+  const count = await getPostsCount();
+  const totalPages = Math.ceil(count / paginatedItemsPerPage);
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
+    slug: String(i + 2),
+  }));
+}
 import { generateBlogMetaData } from "@/lib/constants";
 
 export default async function BlogArchivePaginated({ params }) {

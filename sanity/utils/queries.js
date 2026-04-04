@@ -81,7 +81,7 @@ export async function getPageBySlug(slug) {
     }
 }`,
     { slug },
-    { tags: ["page"] }
+    { tags: ["page", "form"] }
   );
 }
 
@@ -221,5 +221,29 @@ export async function getSiteSettings() {
     }`,
     {},
     { tags: ["site_settings"] }
+  );
+}
+
+export async function getAllPageSlugs() {
+  return fetchSanity(
+    groq`*[_type == "page" && ${QUERY_omitDrafts}]{ "slug": slug.current }`,
+    {},
+    { tags: ["page"] }
+  );
+}
+
+export async function getAllPostSlugs() {
+  return fetchSanity(
+    groq`*[_type == "post" && ${QUERY_omitDrafts}]{ "slug": slug.current }`,
+    {},
+    { tags: ["post"] }
+  );
+}
+
+export async function getAllCategorySlugs() {
+  return fetchSanity(
+    groq`*[_type == "post_category" && ${QUERY_omitDrafts}]{ "slug": slug.current }`,
+    {},
+    { tags: ["post"] }
   );
 }
