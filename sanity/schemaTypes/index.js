@@ -6,8 +6,9 @@ import Form from "@/sanity/schemaTypes/documents/Form";
 import FormSubmission from "@/sanity/schemaTypes/documents/FormSubmission";
 import Navigation from "./documents/Navigation";
 import SiteSettings from "./documents/SiteSettings";
+import GlobalTestimonials from "./documents/GlobalTestimonials";
 
-const documents = [Page, Post, PostCategory, Form, FormSubmission, Navigation, SiteSettings];
+const documents = [Page, Post, PostCategory, Form, FormSubmission, Navigation, SiteSettings, GlobalTestimonials];
 const blocks = [...pageBuilderBlocks];
 
 const schemaTypes = [...documents, ...blocks];

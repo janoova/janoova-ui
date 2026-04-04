@@ -83,7 +83,25 @@ const Wrapper = styled.div`
   }
 `;
 
+const resolveGlobalItem = (data) => {
+  if (!data.use_global_testimonials) return data;
+  const items = data.global_testimonials_ref?.testimonials ?? [];
+  const idx = Math.max(0, (data.global_testimonial_index || 1) - 1);
+  const item = items[idx];
+  if (!item) return data;
+  return {
+    ...data,
+    heading: item.quote,
+    avatar: item.avatar,
+    person_name: item.person_name,
+    person_title: item.person_title,
+    person_linkedin_url: item.person_linkedin_url,
+    logo: item.logo,
+  };
+};
+
 const TestimonialVariant03 = ({ data = {}, index }) => {
+  const d = resolveGlobalItem(data);
   // Generate a unique modal ID based on the component's _key
   const modalId = data._key ? `testimonial-modal-${data._key}` : null;
   const shouldShowModal = data.enable_modal && modalId;
@@ -183,7 +201,7 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                       </ConditionalBlurFade>
                     )} */}
 
-                    {data.heading && (
+                    {d.heading && (
                       <ConditionalBlurFade
                         enabled={data.enable_animations}
                         delay={0.2}
@@ -193,13 +211,13 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                             tag={data?.heading_tag || "span"}
                             className={`u__h3 mb-0`}
                           >
-                            {data.heading}
+                            {d.heading}
                           </Heading>
                         </div>
                       </ConditionalBlurFade>
                     )}
 
-                    {data?.logo?.asset && (
+                    {d?.logo?.asset && (
                       <ConditionalBlurFade
                         enabled={data.enable_animations}
                         delay={0.25}
@@ -210,8 +228,8 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                             sizes="100vw"
                             width={500}
                             height={500}
-                            src={urlFor(data.logo).url()}
-                            alt={data.logo.alt ?? ""}
+                            src={urlFor(d.logo).url()}
+                            alt={d.logo.alt ?? ""}
                           />
                         </div>
                       </ConditionalBlurFade>
@@ -222,7 +240,7 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                 </div>
                 <div className="col-md-4 order-md-1">
                   <div>
-                    {data?.avatar?.asset && (
+                    {d?.avatar?.asset && (
                       <ConditionalBlurFade
                         enabled={data.enable_animations}
                         delay={0.2}
@@ -233,29 +251,29 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                             fill={true}
                             placeholder="blur"
                             blurDataURL={
-                              data?.image?.asset?.metadata?.lqip ||
+                              d?.avatar?.asset?.metadata?.lqip ||
                               fallbackImageBlurDataUrl
                             }
-                            src={urlFor(data.avatar).url()}
-                            alt={data.avatar.alt ?? ""}
+                            src={urlFor(d.avatar).url()}
+                            alt={d.avatar.alt ?? ""}
                             sizes="100%"
                           />
                         </div>
                       </ConditionalBlurFade>
                     )}
-                    {data.person_name && (
+                    {d.person_name && (
                       <ConditionalBlurFade
                         enabled={data.enable_animations}
                         delay={0.3}
                       >
                         <div className="c__heading-wrapper mb-[0.1rem]">
                           <Heading tag={`span`} className={`u__h6 mb-0`}>
-                            {data.person_name}
+                            {d.person_name}
                           </Heading>
                         </div>
                       </ConditionalBlurFade>
                     )}
-                    {data.person_title && (
+                    {d.person_title && (
                       <ConditionalBlurFade
                         enabled={data.enable_animations}
                         delay={0.35}
@@ -265,18 +283,18 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                             tag={`span`}
                             className={`u__small mb-0 u__f-400`}
                           >
-                            {data.person_title}
+                            {d.person_title}
                           </Heading>
                         </div>
                       </ConditionalBlurFade>
                     )}
-                    {getCleanValue(data.person_linkedin_url) && (
+                    {getCleanValue(d.person_linkedin_url) && (
                       <ConditionalBlurFade
                         enabled={data.enable_animations}
                         delay={0.4}
                       >
                         <a
-                          href={getCleanValue(data.person_linkedin_url)}
+                          href={getCleanValue(d.person_linkedin_url)}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="b__testimonial__variant03__linkedin-link mt-[0.5rem]"
@@ -286,7 +304,7 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
                             backfaceVisibility: "hidden",
                             WebkitBackfaceVisibility: "hidden",
                           }}
-                          aria-label={`View ${getCleanValue(data.person_name) || "person"}'s LinkedIn profile`}
+                          aria-label={`View ${getCleanValue(d.person_name) || "person"}'s LinkedIn profile`}
                         >
                           <FaLinkedin size={24} color="#0470ae" />
                         </a>
@@ -306,33 +324,33 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
           <div className="space-y-6 pt-[1rem]">
             {/* Person Info */}
             <div className="flex items-start gap-5 pb-[1.85rem] border-b">
-              {data?.avatar?.asset && (
+              {d?.avatar?.asset && (
                 <Image
                   className="flex-shrink-0 rounded-[100%] object-cover w-[100px] h-[100px]"
                   width={200}
                   height={200}
-                  src={urlFor(data.avatar).url()}
-                  alt={data.avatar.alt ?? ""}
+                  src={urlFor(d.avatar).url()}
+                  alt={d.avatar.alt ?? ""}
                 />
               )}
               <div className="flex-1 min-w-0">
-                {data.person_name && (
+                {d.person_name && (
                   <Heading tag="span" className="u__h6 !mb-[0.25rem]">
-                    {data.person_name}
+                    {d.person_name}
                   </Heading>
                 )}
-                {data.person_title && (
+                {d.person_title && (
                   <p className="text-sm text-gray-600 !mb-[0.75rem]">
-                    {data.person_title}
+                    {d.person_title}
                   </p>
                 )}
-                {getCleanValue(data.person_linkedin_url) && (
+                {getCleanValue(d.person_linkedin_url) && (
                   <a
-                    href={getCleanValue(data.person_linkedin_url)}
+                    href={getCleanValue(d.person_linkedin_url)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="b__testimonial__variant03__linkedin-link inline-block"
-                    aria-label={`View ${getCleanValue(data.person_name) || "person"}'s LinkedIn profile`}
+                    aria-label={`View ${getCleanValue(d.person_name) || "person"}'s LinkedIn profile`}
                   >
                     <FaLinkedin size={20} color="#0470ae" />
                   </a>

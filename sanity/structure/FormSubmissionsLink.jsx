@@ -38,7 +38,7 @@ export function FormSubmissionsLink() {
           View, search and filter all form submissions
         </p>
         <a
-          href="/internal/form-submissions"
+          href="/api/enable-internal"
           target="_blank"
           rel="noreferrer"
           style={{

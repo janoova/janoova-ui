@@ -28,6 +28,7 @@ export function DotPattern({
     >
       <defs>
         <pattern
+          suppressHydrationWarning
           id={id}
           width={width}
           height={height}
@@ -39,7 +40,7 @@ export function DotPattern({
           <circle id="pattern-circle" cx={cx} cy={cy} r={cr} />
         </pattern>
       </defs>
-      <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
+      <rect suppressHydrationWarning width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
     </svg>
   );
 }
@@ -77,6 +78,7 @@ export function GridPattern({
     >
       <defs>
         <pattern
+          suppressHydrationWarning
           id={id}
           width={width}
           height={height}
@@ -91,7 +93,7 @@ export function GridPattern({
           />
         </pattern>
       </defs>
-      <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
+      <rect suppressHydrationWarning width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
     </svg>
   );
 }

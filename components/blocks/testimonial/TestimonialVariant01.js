@@ -23,7 +23,24 @@ const Wrapper = styled.div`
   }
 `;
 
+const resolveGlobalItem = (data) => {
+  if (!data.use_global_testimonials) return data;
+  const items = data.global_testimonials_ref?.testimonials ?? [];
+  const idx = Math.max(0, (data.global_testimonial_index || 1) - 1);
+  const item = items[idx];
+  if (!item) return data;
+  return {
+    ...data,
+    heading: item.quote,
+    avatar: item.avatar,
+    person_name: item.person_name,
+    person_title: item.person_title,
+    logo: item.logo,
+  };
+};
+
 const TestimonialVariant01 = ({ data = {}, index }) => {
+  const d = resolveGlobalItem(data);
   return (
     <Bounded
       id={data._key}
@@ -43,7 +60,7 @@ const TestimonialVariant01 = ({ data = {}, index }) => {
       <Wrapper>
         <div className="container relative u__z-index-1">
           <blockquote className="text-center">
-            {data?.logo?.asset && (
+            {d?.logo?.asset && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0}>
                 <div className="b__testimonial__variant01__logo-wrapper mb-[2rem]">
                   <Image
@@ -51,25 +68,25 @@ const TestimonialVariant01 = ({ data = {}, index }) => {
                     sizes="100vw"
                     width={500}
                     height={500}
-                    src={urlFor(data.logo).url()}
-                    alt={data.logo.alt ?? ""}
+                    src={urlFor(d.logo).url()}
+                    alt={d.logo.alt ?? ""}
                   />
                 </div>
               </ConditionalBlurFade>
             )}
-            {data.heading && (
+            {d.heading && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0.1}>
                 <div className="c__heading-wrapper mb-[3rem] max-w-[1000px] mx-auto">
                   <Heading
                     tag={data?.heading_tag || "span"}
                     className={`u__h3 mb-0 u__heading-color`}
                   >
-                    {data.heading}
+                    {d.heading}
                   </Heading>
                 </div>
               </ConditionalBlurFade>
             )}
-            {data?.avatar?.asset && (
+            {d?.avatar?.asset && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0.2}>
                 <div className="b__testimonial__variant01__avatar-wrapper mb-[1rem]">
                   <Image
@@ -77,29 +94,29 @@ const TestimonialVariant01 = ({ data = {}, index }) => {
                     sizes="100vw"
                     width={500}
                     height={500}
-                    src={urlFor(data.avatar).url()}
-                    alt={data.avatar.alt ?? ""}
+                    src={urlFor(d.avatar).url()}
+                    alt={d.avatar.alt ?? ""}
                   />
                 </div>
               </ConditionalBlurFade>
             )}
-            {data.person_name && (
+            {d.person_name && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0.3}>
                 <div className="c__heading-wrapper mb-[0.1rem]">
                   <Heading
                     tag={`span`}
                     className={`u__h6 mb-0 u__heading-color`}
                   >
-                    {data.person_name}
+                    {d.person_name}
                   </Heading>
                 </div>
               </ConditionalBlurFade>
             )}
-            {data.person_title && (
+            {d.person_title && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0.4}>
                 <div className="c__heading-wrapper mb-[0]">
                   <Heading tag={`span`} className={`u__small mb-0 u__f-400`}>
-                    {data.person_title}
+                    {d.person_title}
                   </Heading>
                 </div>
               </ConditionalBlurFade>

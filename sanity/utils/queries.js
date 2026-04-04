@@ -60,7 +60,24 @@ export async function getPageBySlug(slug) {
         crop,
         alt
       }, 
-      "form": form->
+      "form": form->,
+      "global_testimonials_ref": global_testimonials_ref->{
+        testimonials[] {
+          ...,
+          avatar {
+            asset->,
+            hotspot,
+            crop,
+            alt
+          },
+          logo {
+            asset->,
+            hotspot,
+            crop,
+            alt
+          }
+        }
+      }
     }
 }`,
     { slug },

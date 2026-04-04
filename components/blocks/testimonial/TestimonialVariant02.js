@@ -167,7 +167,10 @@ const useResponsiveItemsPerSlide = (maxItemsPerSlide) => {
 };
 
 const TestimonialVariant02 = ({ data = {}, index }) => {
-  const testimonials = data.testimonials || [];
+  const rawTestimonials = data.use_global_testimonials
+    ? (data.global_testimonials_ref?.testimonials ?? []).map((t) => ({ ...t, heading: t.quote }))
+    : (data.testimonials || []);
+  const testimonials = rawTestimonials;
   const maxItemsPerSlide = data.items_per_slide || 1;
 
   const itemsPerSlide = useResponsiveItemsPerSlide(maxItemsPerSlide);

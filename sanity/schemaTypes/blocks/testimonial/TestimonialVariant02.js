@@ -39,6 +39,22 @@ const TestimonialVariant02 = defineType({
       hidden: true,
     }),
     defineField({
+      name: "use_global_testimonials",
+      title: "Use Global Testimonials",
+      type: "boolean",
+      initialValue: false,
+      description: "When enabled, the Testimonials array below is ignored.",
+      group: "content",
+    }),
+    defineField({
+      name: "global_testimonials_ref",
+      title: "Global Testimonials Source",
+      type: "reference",
+      to: [{ type: "global_testimonials" }],
+      group: "content",
+      hidden: ({ parent }) => !parent?.use_global_testimonials,
+    }),
+    defineField({
       name: "heading",
       title: "Heading",
       type: "string",
@@ -60,6 +76,7 @@ const TestimonialVariant02 = defineType({
       title: "Testimonials",
       type: "array",
       group: "content",
+      hidden: ({ parent }) => !!parent?.use_global_testimonials,
       initialValue: () =>
         Array(3)
           .fill(0)
