@@ -9,6 +9,7 @@ export default defineType({
     { name: "footer", title: "Footer" },
     { name: "social", title: "Social" },
     { name: "legal", title: "Legal" },
+    { name: "integrations", title: "Integrations" },
   ],
   fields: [
     defineField({
@@ -114,6 +115,21 @@ export default defineType({
       title: "Youtube URL",
       type: "string",
       group: "social",
+    }),
+    defineField({
+      name: "gtm_id",
+      title: "Google Tag Manager ID",
+      description: "e.g. GTM-XXXXXXX. Leave blank to disable GTM.",
+      type: "string",
+      group: "integrations",
+    }),
+    defineField({
+      name: "enable_top_loader",
+      title: "Enable Top Loader",
+      description: "Show a progress bar at the top of the page on route changes.",
+      type: "boolean",
+      initialValue: false,
+      group: "general",
     }),
     defineField({
       name: "privacy_policy_url",

@@ -18,6 +18,7 @@ import FontSelectorGate from "@/components/wrappers/FontSelectorGate";
 import DynamicFontLoader from "@/components/wrappers/DynamicFontLoader";
 import ThemeProvider from "@/components/wrappers/ThemeProvider";
 import OrganizationJsonLd from "@/components/wrappers/OrganizationJsonLd";
+import { getSiteSettings } from "@/sanity/utils/queries";
 
 const globalFont = Outfit({
   subsets: ["latin"],
@@ -32,7 +33,10 @@ export const metadata = {
   ),
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const siteSettings = await getSiteSettings();
+  const gtmId = siteSettings?.gtm_id;
+  const enableTopLoader = siteSettings?.enable_top_loader;
   return (
     <html lang="en" className={globalFont.variable} suppressHydrationWarning>
       <body
@@ -44,16 +48,18 @@ export default function RootLayout({ children }) {
             __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})();`,
           }}
         />
-        {/* <GoogleTagManager gtmId="GTM-MF983CW" /> */}
+        {gtmId && <GoogleTagManager gtmId={gtmId} />}
         <Suspense fallback={null}>
           <GTMTracker />
         </Suspense>
-        <NextTopLoader
-          color="var(--t-primary-branding-color)"
-          showSpinner={false}
-          height={2}
-          zIndex={999999}
-        />
+        {enableTopLoader && (
+          <NextTopLoader
+            color="var(--t-primary-branding-color)"
+            showSpinner={false}
+            height={2}
+            zIndex={999999}
+          />
+        )}
         <OrganizationJsonLd />
         <StyledComponentsRegistry>
           <ThemeProvider>

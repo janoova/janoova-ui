@@ -7,8 +7,15 @@ export default function GTMTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const previousUrlRef = useRef("");
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      previousUrlRef.current = window.location.href;
+      return;
+    }
+
     if (pathname) {
       const url =
         pathname +
@@ -23,7 +30,6 @@ export default function GTMTracker() {
         previousPageUrl: previousUrlRef.current || document.referrer,
       });
 
-      // Update the ref with current URL for next navigation
       previousUrlRef.current = window.location.href;
     }
   }, [pathname, searchParams]);

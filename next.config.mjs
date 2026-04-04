@@ -15,7 +15,10 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ["cdn.sanity.io", "ik.imagekit.io"],
+    remotePatterns: [
+      { protocol: "https", hostname: "cdn.sanity.io" },
+      { protocol: "https", hostname: "ik.imagekit.io" },
+    ],
   },
   experimental: {
     optimizePackageImports: [
