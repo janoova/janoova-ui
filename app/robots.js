@@ -1,26 +1,26 @@
-// app/robots.js
-
 export default function robots() {
-  const baseUrl = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
-  const isVercelPreview = baseUrl && baseUrl.includes("vercel.app");
+  const productionUrl = process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL;
+  const isVercelPreview = productionUrl && productionUrl.includes("vercel.app");
+  const isJanoovaUi = productionUrl && productionUrl.includes("ui.janoova.com");
 
-  if (isVercelPreview) {
-    // Disallow everything for Vercel preview deployments
+  if (isVercelPreview || isJanoovaUi) {
     return {
       rules: {
         userAgent: "*",
         disallow: "/",
       },
-    };
-  } else {
-    // Allow everything for production with sitemap
-    const siteUrl = baseUrl ? `https://${baseUrl}` : "https://example.com";
-    return {
-      rules: {
-        userAgent: "*",
-        disallow: "/",
-      },
-      sitemap: `${siteUrl}/sitemap.xml`,
     };
   }
+
+  const siteUrl = productionUrl
+    ? `https://${productionUrl}`
+    : "https://example.com";
+
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+    },
+    sitemap: `${siteUrl}/sitemap.xml`,
+  };
 }

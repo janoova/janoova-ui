@@ -1,9 +1,7 @@
 import { fetchSanity, groq } from "@/sanity/utils/fetch";
 import { QUERY_omitDrafts } from "@/sanity/utils/constants";
 
-// Cache for 1 hour but still generate dynamically
-export const revalidate = 3600; // 1 hour in seconds
-export const dynamic = "force-dynamic";
+export const revalidate = false;
 
 export default async function sitemap() {
   const baseUrl =

@@ -17,6 +17,7 @@ import ForceRefreshLinks from "@/components/wrappers/ForceRefreshLinks";
 import FontSelectorGate from "@/components/wrappers/FontSelectorGate";
 import DynamicFontLoader from "@/components/wrappers/DynamicFontLoader";
 import ThemeProvider from "@/components/wrappers/ThemeProvider";
+import OrganizationJsonLd from "@/components/wrappers/OrganizationJsonLd";
 
 const globalFont = Outfit({
   subsets: ["latin"],
@@ -25,11 +26,11 @@ const globalFont = Outfit({
   variable: "--t-font-family--outfit",
 });
 
-// export const metadata = {
-//   verification: {
-//     google: "uye_V3mht9i4rFvdCAqu_K9cviI2TozmtTHVP-aRJK4",
-//   },
-// };
+export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"
+  ),
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
           height={2}
           zIndex={999999}
         />
+        <OrganizationJsonLd />
         <StyledComponentsRegistry>
           <ThemeProvider>
             <GlobalStyles />

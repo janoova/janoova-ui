@@ -1,4 +1,6 @@
 import { revalidateTag } from "next/cache";
+
+const SITEMAP_TYPES = ["page", "post", "post_category"];
 import { NextResponse } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
@@ -30,8 +32,11 @@ export async function POST(req) {
 
     console.log(`🔄 [${revalidationId}] About to revalidate tag:`, body._type);
 
-    // Revalidate the tag
     revalidateTag(body._type);
+
+    if (SITEMAP_TYPES.includes(body._type)) {
+      revalidateTag("sitemap");
+    }
 
     console.log(
       `✅ [${revalidationId}] Revalidation completed for tag:`,

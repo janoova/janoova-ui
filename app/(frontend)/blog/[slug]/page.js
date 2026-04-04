@@ -1,12 +1,15 @@
 import { getMetaData } from "@/lib/seo";
 import { getPostBySlug, getAllPostSlugs } from "@/sanity/utils/queries";
 import { notFound } from "next/navigation";
+import TemplatePostVariant01 from "@/components/templates/post/TemplatePostVariant01";
+import JsonLd from "@/components/wrappers/JsonLd";
+import { baseUrl, organization } from "@/lib/constants";
+import urlFor from "@/lib/imageUrlBuilder";
 
 export async function generateStaticParams() {
   const posts = await getAllPostSlugs();
   return posts.filter((p) => p.slug).map((p) => ({ slug: p.slug }));
 }
-import TemplatePostVariant01 from "@/components/templates/post/TemplatePostVariant01";
 
 export default async function Post({ params }) {
   const { slug } = await params;
@@ -35,8 +38,24 @@ export default async function Post({ params }) {
     background_pattern_type: `grid`,
   };
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: data.meta_title || data.title,
+    description: data.meta_description || "",
+    url: `${baseUrl}/blog/${data.slug.current}`,
+    datePublished: data.publish_date || data._createdAt,
+    dateModified: data._updatedAt,
+    ...(data.featured_image
+      ? { image: urlFor(data.featured_image).url() }
+      : {}),
+    author: { "@type": "Organization", name: organization },
+    publisher: { "@type": "Organization", name: organization },
+  };
+
   return (
     <>
+      <JsonLd schema={articleSchema} />
       <TemplatePostVariant01
         data={data}
         feedData={feedData}

@@ -6,8 +6,14 @@ import { draftMode } from "next/headers";
 export { default as groq } from "groq";
 
 export async function fetchSanity(query, params, nextOptions = {}) {
-  const draft = await draftMode();
-  const preview = dev || draft.isEnabled;
+  let isDraftMode = false;
+  try {
+    const draft = await draftMode();
+    isDraftMode = draft.isEnabled;
+  } catch {
+    // Outside request scope (e.g. generateStaticParams at build time)
+  }
+  const preview = dev || isDraftMode;
   const fetchId = Math.random().toString(36).substring(7);
 
   const config = preview
