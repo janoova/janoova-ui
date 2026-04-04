@@ -3,10 +3,11 @@ import Post from "@/sanity/schemaTypes/documents/Post";
 import PostCategory from "@/sanity/schemaTypes/documents/PostCategory";
 import pageBuilderBlocks from "./blocks";
 import Form from "@/sanity/schemaTypes/documents/Form";
+import FormSubmission from "@/sanity/schemaTypes/documents/FormSubmission";
 import Navigation from "./documents/Navigation";
 import SiteSettings from "./documents/SiteSettings";
 
-const documents = [Page, Post, PostCategory, Form, Navigation, SiteSettings];
+const documents = [Page, Post, PostCategory, Form, FormSubmission, Navigation, SiteSettings];
 const blocks = [...pageBuilderBlocks];
 
 const schemaTypes = [...documents, ...blocks];

@@ -34,14 +34,17 @@ const ModelVariant01Client = ({ data = {}, index, siteSettings }) => {
 
   const {
     form_fields = null,
-    formspark_id = null,
+    title: form_title = null,
+    notification_email = null,
     button_title: formButtonTitle,
     redirect_url,
     thankyou_message,
   } = data?.form || {};
 
   const { formMessage, payloadPosting, onSubmit } = useFormSubmission({
-    formspark_id,
+    form_title,
+    notification_email,
+    form_fields,
     thankyou_message,
     redirect_url,
     reset,

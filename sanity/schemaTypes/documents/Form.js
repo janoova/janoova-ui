@@ -1,5 +1,3 @@
-import { isUniqueAcrossAllDocuments } from "@/sanity/utils/helpers";
-
 const Form = {
   name: "form",
   title: "Forms",
@@ -13,13 +11,11 @@ const Form = {
       validation: (rule) => rule.required(),
     },
     {
-      name: "formspark_id",
-      title: "Formspark ID",
+      name: "notification_email",
+      title: "Notification Email",
+      description: "Email(s) to receive form submission notifications. Separate multiple with commas.",
       type: "string",
       validation: (Rule) => Rule.required(),
-      options: {
-        isUnique: isUniqueAcrossAllDocuments,
-      },
     },
     {
       name: "form_fields",
@@ -51,13 +47,13 @@ const Form = {
   preview: {
     select: {
       title: "title",
-      formspark_id: "formspark_id",
+      notification_email: "notification_email",
     },
     prepare(selection) {
-      const { title, formspark_id } = selection;
+      const { title, notification_email } = selection;
       return {
         title,
-        subtitle: `ID: ${formspark_id}`,
+        subtitle: notification_email || "",
       };
     },
   },
