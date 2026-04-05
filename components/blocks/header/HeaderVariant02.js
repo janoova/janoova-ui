@@ -253,15 +253,28 @@ const MobileNavItem = ({ elem, depth = 1, navigationState, handleNavigationState
 const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(65);
   const [navigationState, setNavigationState] = useState(navigationSchema?.items);
   const [subMenusToggledByTab, setSubMenusToggledByTab] = useState(false);
   const pathname = usePathname();
+  const headerBarRef = useRef(null);
   const items = navigationSchema?.items ?? [];
 
   const handleNavigationState = (id) => {
     setNavigationState(updateActiveStatusByKey(navigationState, id));
     if (window.innerWidth >= 992) setSubMenusToggledByTab(true);
   };
+
+  // Track actual header bar height for drawer positioning
+  useEffect(() => {
+    if (!headerBarRef.current) return;
+    const ro = new ResizeObserver(() => {
+      setHeaderHeight((headerBarRef.current?.offsetHeight ?? 65) - 1);
+    });
+    ro.observe(headerBarRef.current);
+    setHeaderHeight(headerBarRef.current.offsetHeight);
+    return () => ro.disconnect();
+  }, []);
 
   // Sticky scroll detection
   useEffect(() => {
@@ -325,27 +338,27 @@ const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
 
       {/* ── Header bar ── */}
       <header
+        ref={headerBarRef}
         role="banner"
         className={cn(
           "sticky top-0 inset-x-0 z-[99999] text-[var(--t-heading-color)] bg-transparent transition-[padding] duration-300 ease-in-out",
           !scrolled && "border-b border-[var(--t-border-color)]",
-          scrolled && "min-[992px]:pt-3 min-[992px]:px-4"
+          scrolled && "min-[1200px]:pt-3 min-[1200px]:px-4"
         )}
       >
         <div
           className={cn(
             "flex items-center justify-between gap-6 transition-[box-shadow,background-color,backdrop-filter] duration-300 ease-in-out",
-            // Mobile: flat bar. Desktop: always pill shaped.
-            "w-full max-w-[1320px] mx-auto px-4 min-[992px]:px-6 py-2.5 min-[992px]:rounded-full",
-            // Not scrolled: solid bg
+            "container py-2.5 min-[1200px]:rounded-full",
             !scrolled && "bg-[var(--t-cp-base-white)]",
-            // Scrolled: glass bg + shadow
             scrolled && [
               "bg-[var(--t-cp-base-white)]/80",
               "backdrop-blur-md",
               "shadow-[0_2px_12px_rgba(0,0,0,0.08)]",
               "dark:shadow-[0_4px_20px_rgba(0,0,0,0.4)]",
               "dark:border dark:border-[var(--t-border-color)]",
+              "min-[1200px]:!max-w-[1320px]",
+              "min-[1200px]:!px-8",
             ]
           )}
         >
@@ -419,7 +432,7 @@ const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
           className={`b__header__variant01__nav-wrapper b__header__variant01__nav-wrapper-small ${menuOpen ? `b__header__variant01__nav-wrapper-small--active` : ``}`}
         >
           {/* Override top: 83px from V01 CSS — V02 header is shorter (py-2.5 + 44px logo ≈ 65px) */}
-          <div className="b__header__variant01__navigation-board" style={{ top: "65px" }}>
+          <div className="b__header__variant01__navigation-board" style={{ top: `${headerHeight}px` }}>
             <nav className="b__header__variant01__nav" aria-label="Mobile navigation">
               <ul role="menu">
                 {items.map((elem) => (
@@ -463,6 +476,7 @@ const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
       <div
         onClick={() => setMenuOpen(false)}
         className={`b__header__variant01__navigation-board__tint ${menuOpen ? `b__header__variant01__navigation-board__tint--active` : ``}`}
+        style={{ background: "rgba(255,255,255,0.6)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }}
       />
     </>
   );
