@@ -122,7 +122,7 @@ const MenuLink = ({
   );
 };
 
-const HeaderVariant01 = ({ navigationSchema, siteSettings }) => {
+const HeaderVariant01 = ({ navigationSchema, siteSettings, glass = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [navigationState, setNavigationState] = useState(
     navigationSchema?.items
@@ -173,7 +173,7 @@ const HeaderVariant01 = ({ navigationSchema, siteSettings }) => {
 
   return (
     <>
-      <header className="b__header__variant01 b__header__variant01--glass b__header__variant01--sticky">
+      <header className={`b__header__variant01 ${glass ? "b__header__variant01--glass " : ""}b__header__variant01--sticky`}>
         <div className="container">
           <Button
             linkClassName="c__button--skip-to-content"

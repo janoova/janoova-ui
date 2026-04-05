@@ -35,6 +35,20 @@ export default defineType({
       group: "general",
     }),
     defineField({
+      name: "header_variant",
+      title: "Header Variant",
+      type: "string",
+      group: "general",
+      initialValue: "variant02",
+      options: {
+        list: [
+          { title: "HeaderVariant01 - Basic", value: "variant01_basic" },
+          { title: "HeaderVariant01 - Glass", value: "variant01_glass" },
+          { title: "HeaderVariant02", value: "variant02" },
+        ],
+      },
+    }),
+    defineField({
       name: "header_button_title",
       title: "Header Button Title",
       type: "string",
