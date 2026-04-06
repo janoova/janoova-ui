@@ -1,4 +1,6 @@
+"use client";
 import { cn } from "@/lib/utils";
+import ReactFastMarquee from "react-fast-marquee";
 
 export function Marquee({
   className,
@@ -6,41 +8,27 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 4,
+  speed = 20,
+  repeat,
   ...props
 }) {
+  const direction = vertical ? "up" : reverse ? "right" : "left";
+
   return (
-    <div
-      {...props}
-      className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
-        {
-          "flex-row": !vertical,
-          "flex-col": vertical,
-        },
-        className
-      )}
-    >
-      {Array(repeat)
-        .fill(0)
-        .map((_, i) => (
-          <div
-            key={i}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
-              "animate-marquee flex-row": !vertical,
-              "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover,
-              "[animation-direction:reverse]": reverse,
-            })}
-            style={{
-              willChange: "transform",
-              backfaceVisibility: "hidden",
-              WebkitBackfaceVisibility: "hidden",
-            }}
-          >
-            {children}
-          </div>
-        ))}
+    <div className="relative">
+      <ReactFastMarquee
+        className={cn(className)}
+        direction={direction}
+        pauseOnHover={pauseOnHover}
+        speed={speed}
+        autoFill={true}
+        gradient={false}
+        {...props}
+      >
+        {children}
+      </ReactFastMarquee>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10" />
     </div>
   );
 }

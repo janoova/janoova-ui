@@ -57,7 +57,7 @@ const PartnerVariant01 = ({ data = {}, index }) => {
         </div>
         {data?.repeater && data?.repeater?.length > 0 && (
           <div className="container relative u__z-index-1 mt-[2.5rem] b__partner__variant01__marquee-wrapper">
-            <Marquee className="[--duration:30s] md:[--duration:60s]">
+            <Marquee speed={15}>
               {data.repeater.map((elem, index) => {
                 if (!elem) return null;
                 const image = elem?.image;
@@ -81,8 +81,6 @@ const PartnerVariant01 = ({ data = {}, index }) => {
                 );
               })}
             </Marquee>
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
           </div>
         )}
       </Wrapper>

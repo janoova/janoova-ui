@@ -4,7 +4,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const Component = styled.div`
-  padding: 0 1.5rem;
+  padding: 0 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
