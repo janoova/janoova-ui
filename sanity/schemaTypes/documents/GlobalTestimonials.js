@@ -2,9 +2,16 @@ import { defineField, defineType } from "sanity";
 
 const GlobalTestimonials = defineType({
   name: "global_testimonials",
-  title: "Global Testimonials",
+  title: "Testimonial Group",
   type: "document",
   fields: [
+    defineField({
+      name: "title",
+      title: "Group Title",
+      type: "string",
+      description: "Internal label to identify this testimonial group (e.g. 'Homepage', 'Pricing Page')",
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: "testimonials",
       title: "Testimonials",
@@ -63,8 +70,9 @@ const GlobalTestimonials = defineType({
     }),
   ],
   preview: {
-    prepare() {
-      return { title: "Global Testimonials" };
+    select: { title: "title" },
+    prepare(selection) {
+      return { title: selection.title || "Untitled Testimonial Group" };
     },
   },
 });

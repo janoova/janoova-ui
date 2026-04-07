@@ -10,13 +10,14 @@ export const structure = (S) =>
       S.documentTypeListItem("page").title("Pages").icon(VscMultipleWindows),
       S.documentTypeListItem("post").title("Posts"),
       S.documentTypeListItem("post_category").title("Post Categories"),
+      S.documentTypeListItem("global_testimonials").title("Testimonials"),
       S.listItem()
-        .title("Global Testimonials")
-        .id("global_testimonials")
+        .title("Team Members")
+        .id("global_team")
         .child(
           S.document()
-            .schemaType("global_testimonials")
-            .documentId("global_testimonials")
+            .schemaType("global_team")
+            .documentId("global_team")
         ),
       S.divider(),
       S.documentTypeListItem("form").title("Forms"),

@@ -101,6 +101,7 @@ const TestimonialVariant04 = defineType({
       initialValue: "Our Customers",
       group: "content",
     }),
+    generateHeadingTagField({ name: "label_heading_tag", title: "Label Heading Tag" }),
     defineField({
       name: "heading",
       title: "Heading",

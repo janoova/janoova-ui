@@ -13,7 +13,7 @@ import { structure } from "./sanity/structure";
 import { copyPastePlugin } from "@superside-oss/sanity-plugin-copy-paste";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
-const singletonTypes = new Set(["site_settings", "global_testimonials"]);
+const singletonTypes = new Set(["site_settings", "global_team"]);
 
 export default defineConfig({
   name: "default",

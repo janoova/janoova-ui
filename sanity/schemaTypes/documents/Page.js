@@ -156,6 +156,13 @@ const Page = {
                 .filter((elem) => elem._menuCategory === "modal")
                 ?.map((elem) => elem.name),
             },
+            {
+              name: "team",
+              title: "Team",
+              of: pageBuilderBlocks
+                .filter((elem) => elem._menuCategory === "team")
+                ?.map((elem) => elem.name),
+            },
           ],
           views: [
             {

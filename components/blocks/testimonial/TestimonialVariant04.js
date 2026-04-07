@@ -5,7 +5,6 @@ import urlFor from "@/lib/imageUrlBuilder";
 import Heading from "@/components/ui/Heading";
 import Description from "@/components/ui/Description";
 import Image from "next/image";
-import Pill from "@/components/ui/Pill";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import { getCleanValue } from "@/lib/helpers";
@@ -94,16 +93,16 @@ const TestimonialVariant04 = ({ data = {}, index }) => {
       <div className="container relative u__z-index-1">
         {/* Section header */}
         {(data.label || data.heading || data.subheading) && (
-          <div className={cn("b__header mb-[3rem]", headerAlignClass)}>
+          <div className={cn("b__header mb-[2.5rem]", headerAlignClass)}>
             {data.label && (
               <ConditionalBlurFade enabled={data.enable_animations} delay={0}>
-                <div
-                  className={cn(
-                    "mb-[1rem]",
-                    isCentered ? "d-flex justify-content-center" : "",
-                  )}
-                >
-                  <Pill title={data.label} />
+                <div className="c__label-wrapper mb-[0.5rem]">
+                  <Heading
+                    tag={data?.label_heading_tag || "span"}
+                    className="u__subtitle u__text-branding-primary u__f-500"
+                  >
+                    {data.label}
+                  </Heading>
                 </div>
               </ConditionalBlurFade>
             )}
