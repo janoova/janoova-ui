@@ -1,11 +1,11 @@
-Marketing site for mosibello.com (sanity).
+Janoova UI Framework
 
 ## Installing
 
 ```bash
 # From Source
-git clone https://github.com/janoova/janoova-marketing.git
-cd janoova-marketing
+git clone https://github.com/janoova/janoova-ui.git
+cd janoova-ui
 ```
 
 then install dependencies
