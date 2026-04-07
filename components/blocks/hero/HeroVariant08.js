@@ -1,4 +1,3 @@
-"use client";
 import Button from "@/components/ui/Button";
 import Bounded from "@/components/wrappers/Bounded";
 import styled from "styled-components";
@@ -83,7 +82,7 @@ const HeroVariant08 = ({ data = {}, index }) => {
           >
             <div className="b__hero__variant08__content-card">
               {data.label && (
-                <ConditionalBlurFade enabled={data.enable_animations} delay={0} lazy={false}>
+                <ConditionalBlurFade enabled={data.enable_animations} delay={0}>
                   <div className="c__label-wrapper mb-[0.5rem]">
                     <Heading
                       tag={data.label_heading_tag || "span"}
@@ -98,7 +97,6 @@ const HeroVariant08 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data.enable_animations}
                   delay={0.1}
-                  lazy={false}
                 >
                   <div className="c__heading-wrapper mb-[1rem]">
                     <Heading tag={data.heading_tag || "h1"} className={`u__h1`}>
@@ -112,7 +110,6 @@ const HeroVariant08 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data.enable_animations}
                   delay={0.2}
-                  lazy={false}
                 >
                   <div className="c__description-wrapper">
                     <Description className="u__h6">{data.content}</Description>
@@ -124,7 +121,6 @@ const HeroVariant08 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data.enable_animations}
                   delay={0.3}
-                  lazy={false}
                 >
                   <div className="c__button-wrapper mt-[2rem]">
                     <div
@@ -163,7 +159,6 @@ const HeroVariant08 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data.enable_animations}
                   delay={0.2}
-                  lazy={false}
                 >
                   <div className="b__hero__variant08__image-wrapper">
                     <Image

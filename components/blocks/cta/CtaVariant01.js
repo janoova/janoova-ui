@@ -1,4 +1,3 @@
-"use client";
 import styled from "styled-components";
 import Bounded from "@/components/wrappers/Bounded";
 import Heading from "@/components/ui/Heading";

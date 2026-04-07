@@ -1,4 +1,3 @@
-"use client";
 import styled from "styled-components";
 import { PortableText } from "@portabletext/react";
 import PortableTextComponents from "@/components/ui/PortableTextComponents";

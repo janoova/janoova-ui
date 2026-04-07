@@ -1,5 +1,4 @@
-import LazyBlurFade from "@/components/ui/LazyBlurFade";
-import EagerBlurFade from "@/components/ui/EagerBlurFade";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 export const ConditionalBlurFade = ({
   enabled,
@@ -9,30 +8,17 @@ export const ConditionalBlurFade = ({
   className,
   offset,
   inViewMargin,
-  lazy = true,
 }) =>
   enabled ? (
-    lazy ? (
-      <LazyBlurFade
-        inViewMargin={inViewMargin}
-        offset={offset}
-        className={className}
-        inView={inView || true}
-        delay={delay}
-      >
-        {children}
-      </LazyBlurFade>
-    ) : (
-      <EagerBlurFade
-        inViewMargin={inViewMargin}
-        offset={offset}
-        className={className}
-        inView={inView || true}
-        delay={delay}
-      >
-        {children}
-      </EagerBlurFade>
-    )
+    <BlurFade
+      inViewMargin={inViewMargin}
+      offset={offset}
+      className={className}
+      inView={inView || true}
+      delay={delay}
+    >
+      {children}
+    </BlurFade>
   ) : (
     <>{children}</>
   );

@@ -1,4 +1,3 @@
-"use client";
 import Bounded from "@/components/wrappers/Bounded";
 import Button from "@/components/ui/Button";
 import styled from "styled-components";

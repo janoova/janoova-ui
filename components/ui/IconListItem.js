@@ -1,4 +1,3 @@
-"use client";
 import styled from "styled-components";
 import parse from "html-react-parser";
 import Image from "next/image";

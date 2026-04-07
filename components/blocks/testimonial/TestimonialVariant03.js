@@ -1,4 +1,3 @@
-"use client";
 import Bounded from "@/components/wrappers/Bounded";
 import styled from "styled-components";
 import urlFor from "@/lib/imageUrlBuilder";
@@ -13,11 +12,7 @@ import { getCleanValue, parseArrayString } from "@/lib/helpers";
 import Button from "@/components/ui/Button";
 import Modal from "@/components/ui/Modal";
 import RichtextField from "@/components/ui/RichtextField";
-import dynamic from "next/dynamic";
-const BorderBeam = dynamic(
-  () => import("@/components/magicui/border-beam").then((m) => ({ default: m.BorderBeam })),
-  { ssr: false }
-);
+import BorderBeamClient from "@/components/ui/BorderBeamClient";
 import { fallbackImageBlurDataUrl } from "@/lib/constants";
 
 const Wrapper = styled.div`
@@ -155,13 +150,13 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
             <div className="b__testimonial__variant03__content-wrapper relative">
               {data.enable_card_border_beam && (
                 <>
-                  <BorderBeam
+                  <BorderBeamClient
                     duration={6}
                     size={350}
                     delay={borderBeamDelay[0]}
                     className={`from-transparent ${beamColorList[0]} to-transparent`}
                   />
-                  <BorderBeam
+                  <BorderBeamClient
                     duration={6}
                     delay={borderBeamDelay[1]}
                     size={350}

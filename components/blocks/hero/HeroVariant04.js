@@ -1,4 +1,3 @@
-"use client";
 import Button from "@/components/ui/Button";
 import Bounded from "@/components/wrappers/Bounded";
 import styled from "styled-components";
@@ -123,7 +122,6 @@ const HeroVariant04 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0}
-                    lazy={false}
                   >
                     <Pill title={data.label} />
                   </ConditionalBlurFade>
@@ -132,7 +130,6 @@ const HeroVariant04 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0.1}
-                    lazy={false}
                   >
                     <div className="c__heading-wrapper mb-[1rem]">
                       <Heading tag={data.heading_tag} className="u__d2">
@@ -145,7 +142,6 @@ const HeroVariant04 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0.2}
-                    lazy={false}
                   >
                     <div className="c__description-wrapper">
                       <Description>{data.description}</Description>
@@ -156,7 +152,6 @@ const HeroVariant04 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data?.enable_animations}
                   delay={0.3}
-                  lazy={false}
                 >
                   <div className="c__button-wrapper mt-[2rem]">
                     <div

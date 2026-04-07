@@ -38,7 +38,7 @@ const HeroVariant01 = ({ data = {}, index }) => {
         <div className={`${data.align_left ? `text-left` : `md:text-center`}`}>
           {data.heading && (
             <div className="c__heading-wrapper mb-[1rem]">
-              <ConditionalBlurFade enabled={data?.enable_animations} lazy={false}>
+              <ConditionalBlurFade enabled={data?.enable_animations}>
                 <Heading tag={data?.heading_tag || "h1"} className={`u__d1`}>
                   {data.heading}
                 </Heading>
@@ -50,7 +50,6 @@ const HeroVariant01 = ({ data = {}, index }) => {
               <ConditionalBlurFade
                 enabled={data?.enable_animations}
                 delay={0.1}
-                lazy={false}
               >
                 <Heading
                   tag={data?.description_heading_tag || "h2"}
@@ -69,7 +68,6 @@ const HeroVariant01 = ({ data = {}, index }) => {
               <ConditionalBlurFade
                 enabled={data?.enable_animations}
                 delay={0.2}
-                lazy={false}
               >
                 <Description className="u__subtitle">
                   {data.content}
@@ -82,7 +80,6 @@ const HeroVariant01 = ({ data = {}, index }) => {
               <ConditionalBlurFade
                 enabled={data?.enable_animations}
                 delay={0.3}
-                lazy={false}
               >
                 <div
                   className={`flex flex-col gap-[12px] min-[500px]:flex-row ${data.align_left ? `justify-start` : `md:justify-center`}`}

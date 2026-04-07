@@ -1,4 +1,3 @@
-"use client";
 import Bounded from "@/components/wrappers/Bounded";
 import styled from "styled-components";
 import ResourceCard from "@/components/ui/ResourceCard";

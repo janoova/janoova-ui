@@ -1,4 +1,3 @@
-"use client";
 import styled from "styled-components";
 import Button from "@/components/ui/Button";
 import Bounded from "@/components/wrappers/Bounded";
@@ -87,12 +86,12 @@ const HeroVariant09 = ({ data = {}, index }) => {
             <div className="col-lg-6">
               <div className={cn(`text-left`, invertTextClassName)}>
                 {data.label && (
-                  <ConditionalBlurFade enabled={data?.enable_animations} lazy={false}>
+                  <ConditionalBlurFade enabled={data?.enable_animations}>
                     <Pill title={data.label} />
                   </ConditionalBlurFade>
                 )}
                 {data.heading && (
-                  <ConditionalBlurFade enabled={data?.enable_animations} lazy={false}>
+                  <ConditionalBlurFade enabled={data?.enable_animations}>
                     <div
                       className={`c__heading-wrapper ${data.description ? `mb-[1rem]` : `mb-0`}`}
                     >
@@ -109,7 +108,6 @@ const HeroVariant09 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0.1}
-                    lazy={false}
                   >
                     <div
                       className={`c__subtitle-wrapper ${data.button_title ? `mb-[1rem]` : ``}`}
@@ -127,7 +125,6 @@ const HeroVariant09 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0.2}
-                    lazy={false}
                   >
                     <div className="c__button-wrapper mt-[2rem]">
                       <div
@@ -164,7 +161,6 @@ const HeroVariant09 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0.3}
-                    lazy={false}
                   >
                     <div className="b__hero__variant09__image-wrapper">
                       <Image

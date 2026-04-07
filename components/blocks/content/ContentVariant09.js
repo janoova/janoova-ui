@@ -1,4 +1,3 @@
-"use client";
 import Bounded from "@/components/wrappers/Bounded";
 import styled from "styled-components";
 import Heading from "@/components/ui/Heading";
@@ -10,7 +9,6 @@ import { BackgroundPattern } from "@/components/ui/BackgroundPatterns";
 import { ConditionalBlurFade } from "@/components/ui/RevealAnimations";
 import { getCleanValue } from "@/lib/helpers";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import React from "react";
 
 const Wrapper = styled.div``;
 
@@ -54,13 +52,9 @@ const parseTextWithAurora = (text, auroraColors) => {
 };
 
 const ContentVariant09 = ({ data = {}, index }) => {
-  // Parse heading with AuroraText if configured
-  const parsedHeading = React.useMemo(() => {
-    if (data.heading) {
-      return parseTextWithAurora(data.heading, data.aurora_colors);
-    }
-    return null;
-  }, [data.heading, data.aurora_colors]);
+  const parsedHeading = data.heading
+    ? parseTextWithAurora(data.heading, data.aurora_colors)
+    : null;
 
   return (
     <Bounded

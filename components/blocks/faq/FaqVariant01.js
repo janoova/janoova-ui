@@ -1,4 +1,3 @@
-"use client";
 import Heading from "@/components/ui/Heading";
 import Description from "@/components/ui/Description";
 import Bounded from "@/components/wrappers/Bounded";
