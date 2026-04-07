@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import Select from "react-select";
+import LazyReactSelect from "@/components/ui/LazyReactSelect";
 
 const GOOGLE_FONTS = [
   "Roboto",
@@ -274,7 +274,7 @@ function FontSelectorContent() {
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Heading Font
             </label>
-            <Select
+            <LazyReactSelect
               value={headingFont}
               onChange={(option) => setHeadingFont(option)}
               options={fontOptions}
@@ -288,7 +288,7 @@ function FontSelectorContent() {
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Heading Weight
             </label>
-            <Select
+            <LazyReactSelect
               value={headingWeight}
               onChange={(option) => setHeadingWeight(option)}
               options={WEIGHTS}
@@ -304,7 +304,7 @@ function FontSelectorContent() {
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Body Font
             </label>
-            <Select
+            <LazyReactSelect
               value={bodyFont}
               onChange={(option) => setBodyFont(option)}
               options={fontOptions}

@@ -67,12 +67,12 @@ const HeroVariant06 = ({ data = {}, index }) => {
         >
           <div className="col-lg-6 relative u__z-index-1">
             {data.label && (
-              <ConditionalBlurFade enabled={data.enable_animations}>
+              <ConditionalBlurFade enabled={data.enable_animations} lazy={false}>
                 <Pill title={data.label} />
               </ConditionalBlurFade>
             )}
             {data.heading && (
-              <ConditionalBlurFade enabled={data.enable_animations} delay={0.1}>
+              <ConditionalBlurFade enabled={data.enable_animations} delay={0.1} lazy={false}>
                 <div className="c__heading-wrapper mb-[1rem]">
                   <Heading tag={data.heading_tag || "h1"} className={`u__d1`}>
                     {data.heading}
@@ -81,14 +81,14 @@ const HeroVariant06 = ({ data = {}, index }) => {
               </ConditionalBlurFade>
             )}
             {data.content && (
-              <ConditionalBlurFade enabled={data.enable_animations} delay={0.2}>
+              <ConditionalBlurFade enabled={data.enable_animations} delay={0.2} lazy={false}>
                 <div className="c__description-wrapper">
                   <Description className="u__h5">{data.content}</Description>
                 </div>
               </ConditionalBlurFade>
             )}
             {data.button_title && (
-              <ConditionalBlurFade enabled={data.enable_animations} delay={0.3}>
+              <ConditionalBlurFade enabled={data.enable_animations} delay={0.3} lazy={false}>
                 <div className="c__button-wrapper mt-[2rem]">
                   <div
                     className={`flex flex-col gap-[12px] min-[500px]:flex-row`}
@@ -119,7 +119,7 @@ const HeroVariant06 = ({ data = {}, index }) => {
           </div>
           <div className="col-lg-6">
             {data?.image?.asset && (
-              <ConditionalBlurFade enabled={data.enable_animations} delay={0.3}>
+              <ConditionalBlurFade enabled={data.enable_animations} delay={0.3} lazy={false}>
                 <div className="b__hero__variant06__image-wrapper">
                   <Image
                     className="b__hero__variant06__image w-auto h-auto"

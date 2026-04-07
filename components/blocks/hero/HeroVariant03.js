@@ -42,7 +42,7 @@ const HeroVariant03 = ({ data = {}, index }) => {
           )}
         >
           {data.heading && (
-            <ConditionalBlurFade enabled={data?.enable_animations}>
+            <ConditionalBlurFade enabled={data?.enable_animations} lazy={false}>
               <div
                 className={`c__heading-wrapper ${data.description ? `mb-[1rem]` : `mb-0`}`}
               >
@@ -56,7 +56,7 @@ const HeroVariant03 = ({ data = {}, index }) => {
             </ConditionalBlurFade>
           )}
           {data.description && (
-            <ConditionalBlurFade enabled={data?.enable_animations} delay={0.1}>
+            <ConditionalBlurFade enabled={data?.enable_animations} delay={0.1} lazy={false}>
               <div
                 className={`c__subtitle-wrapper ${data.button_title ? `mb-[1rem]` : ``}`}
               >
@@ -70,7 +70,7 @@ const HeroVariant03 = ({ data = {}, index }) => {
             </ConditionalBlurFade>
           )}
           {data.button_title && (
-            <ConditionalBlurFade enabled={data?.enable_animations} delay={0.2}>
+            <ConditionalBlurFade enabled={data?.enable_animations} delay={0.2} lazy={false}>
               <div className="c__button-wrapper mt-[2rem]">
                 <div
                   className={cn(

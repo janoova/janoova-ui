@@ -127,6 +127,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data?.enable_animations}
                   delay={0}
+                  lazy={false}
                 >
                   <Pill title={data.label} />
                 </ConditionalBlurFade>
@@ -135,6 +136,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data?.enable_animations}
                   delay={0.1}
+                  lazy={false}
                 >
                   <div className="c__heading-wrapper mb-[1rem]">
                     <Heading
@@ -150,6 +152,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data?.enable_animations}
                   delay={0.2}
+                  lazy={false}
                 >
                   <div className="c__description-wrapper">
                     <Description
@@ -171,6 +174,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data.enable_animations}
                   delay={0.2}
+                  lazy={false}
                 >
                   <RichtextField
                     content={data.additional_content}
@@ -183,6 +187,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
                 <ConditionalBlurFade
                   enabled={data?.enable_animations}
                   delay={0.3}
+                  lazy={false}
                 >
                   <div className="c__button-wrapper mt-[2.5rem]">
                     <Button
@@ -203,6 +208,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
                   <ConditionalBlurFade
                     enabled={data?.enable_animations}
                     delay={0.3}
+                    lazy={false}
                   >
                     <div
                       className={cn(

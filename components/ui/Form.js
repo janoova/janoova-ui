@@ -8,8 +8,8 @@ import { stegaClean } from "@sanity/client/stega";
 import { checkValidJS } from "@/lib/helpers";
 import { usePathname } from "next/navigation";
 import { baseUrl } from "@/lib/constants";
-import Select from "react-select";
 import { useId } from "react";
+import LazyReactSelect from "./LazyReactSelect";
 
 const Component = styled.div`
   .c {
@@ -207,7 +207,7 @@ const SelectField = ({ field, control, error }) => {
       }}
       defaultValue={field.defaultValue || null}
       render={({ field: controllerField }) => (
-        <Select
+        <LazyReactSelect
           {...controllerField}
           instanceId={generatedId}
           name={field.name}
