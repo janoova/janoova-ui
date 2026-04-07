@@ -8,6 +8,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig = {
+  productionBrowserSourceMaps: true,
   async redirects() {
     return redirects;
   },
