@@ -11,6 +11,7 @@ import { codeInput } from "@sanity/code-input";
 import { media } from "sanity-plugin-media";
 import { structure } from "./sanity/structure";
 import { copyPastePlugin } from "@superside-oss/sanity-plugin-copy-paste";
+import { viewPageAction } from "./sanity/actions/viewPageAction";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set(["site_settings", "global_team"]);
@@ -45,9 +46,14 @@ export default defineConfig({
   document: {
     // For singleton types, filter out actions that are not explicitly included
     // in the `singletonActions` list defined above
-    actions: (input, context) =>
-      singletonTypes.has(context.schemaType)
-        ? input.filter(({ action }) => action && singletonActions.has(action))
-        : input,
+    actions: (input, context) => {
+      if (singletonTypes.has(context.schemaType)) {
+        return input.filter(({ action }) => action && singletonActions.has(action));
+      }
+      if (["page", "post"].includes(context.schemaType)) {
+        return [...input, viewPageAction];
+      }
+      return input;
+    },
   },
 });
