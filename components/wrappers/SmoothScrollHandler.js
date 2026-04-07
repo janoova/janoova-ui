@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, Suspense, useCallback } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 
 const SmoothScrollLogic = () => {
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const scrollToSection = useCallback((sectionId) => {
     // Clean the section ID - remove any leading # if present
@@ -74,6 +75,14 @@ const SmoothScrollLogic = () => {
       setTimeout(() => attemptScroll(), 100);
     }
   }, [searchParams, scrollToSection]);
+
+  // Scroll to top on route change (unless scroll_to_section is present)
+  useEffect(() => {
+    const scroll_to_section = searchParams?.get("scroll_to_section");
+    if (!scroll_to_section) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   // Add click event listener for smooth scroll links
   useEffect(() => {
