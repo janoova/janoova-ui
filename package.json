@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:report": "npm run build && node scripts/route-bundle-report.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pagespeed:report": "node scripts/route-bundle-report.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.2",
