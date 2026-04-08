@@ -174,7 +174,6 @@ const HeroVariant09 = ({ data = {}, index }) => {
                         src={urlFor(data.image).url()}
                         alt={data.image.alt ?? ""}
                         sizes="(max-width: 992px) 100vw, 50vw"
-                        priority
                       />
                     </div>
                   </ConditionalBlurFade>

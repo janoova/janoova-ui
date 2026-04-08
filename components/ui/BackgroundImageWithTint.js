@@ -18,7 +18,6 @@ const BackgroundImageWithTint = ({
             src={src}
             alt={alt ?? ""}
             sizes="100vw"
-            priority
           />
         </div>
       )}

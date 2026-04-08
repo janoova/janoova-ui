@@ -71,7 +71,7 @@ const HeroVariant08 = ({ data = {}, index }) => {
         <BackgroundPattern
           patternType={data.background_pattern_type ?? `dots`}
           className={cn(
-            "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]"
+            "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]",
           )}
         />
       )}
@@ -172,7 +172,6 @@ const HeroVariant08 = ({ data = {}, index }) => {
                       src={urlFor(data.image).url()}
                       alt={data.image.alt ?? ""}
                       sizes="(max-width: 992px) 100vw, 50vw"
-                      priority
                     />
                   </div>
                 </ConditionalBlurFade>
