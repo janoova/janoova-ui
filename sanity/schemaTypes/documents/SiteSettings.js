@@ -6,6 +6,7 @@ export default defineType({
   type: "document",
   groups: [
     { name: "general", title: "General", default: true },
+    { name: "announcement", title: "Announcement Bar" },
     { name: "footer", title: "Footer" },
     { name: "social", title: "Social" },
     { name: "seo", title: "SEO" },
@@ -73,6 +74,77 @@ export default defineType({
       title: "Header Click To Call Destination",
       type: "string",
       group: "general",
+    }),
+    defineField({
+      name: "announcement_bar_enabled",
+      title: "Enable Announcement Bar",
+      description: "Show the announcement bar above the header.",
+      type: "boolean",
+      initialValue: false,
+      group: "announcement",
+    }),
+    defineField({
+      name: "announcement_bar_title",
+      title: "Title",
+      description: "Main message shown in the announcement bar.",
+      type: "string",
+      group: "announcement",
+    }),
+    defineField({
+      name: "announcement_bar_button_title",
+      title: "Button Title",
+      type: "string",
+      group: "announcement",
+    }),
+    defineField({
+      name: "announcement_bar_button_url",
+      title: "Button URL",
+      type: "string",
+      group: "announcement",
+    }),
+    defineField({
+      name: "announcement_bar_theme",
+      title: "Theme",
+      type: "string",
+      group: "announcement",
+      initialValue: "primary",
+      options: {
+        list: [
+          { title: "Primary (Branding Color)", value: "primary" },
+          { title: "Secondary (Branding Color)", value: "secondary" },
+        ],
+      },
+    }),
+    defineField({
+      name: "announcement_bar_pattern",
+      title: "Background Pattern",
+      type: "string",
+      group: "announcement",
+      initialValue: "grid",
+      options: {
+        list: [
+          { title: "None", value: "none" },
+          { title: "Grid (Boxes)", value: "grid" },
+          { title: "Diagonal Stripes", value: "diagonal" },
+          { title: "Diamonds", value: "diamonds" },
+        ],
+      },
+    }),
+    defineField({
+      name: "announcement_bar_custom_bg",
+      title: "Custom Background",
+      description:
+        "Overrides the theme color. Accepts any CSS background value — solid color (e.g. #1a1a2e), gradient (e.g. linear-gradient(90deg, #e52d27, #b31217)), etc.",
+      type: "string",
+      group: "announcement",
+    }),
+    defineField({
+      name: "announcement_bar_enable_phone_svg",
+      title: "Enable Phone Icon",
+      description: "Show a phone icon on the left side of the announcement bar.",
+      type: "boolean",
+      initialValue: false,
+      group: "announcement",
     }),
     defineField({
       name: "footer_description",

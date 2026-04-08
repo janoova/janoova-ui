@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import HeaderVariant01 from "@/components/blocks/header/HeaderVariant01";
 import HeaderVariant02 from "@/components/blocks/header/HeaderVariant02";
 import HeaderVariantStarter from "@/components/blocks/header/HeaderVariantStarter";
+import AnnouncementBar from "@/components/blocks/header/AnnouncementBar";
 import FooterVariant02 from "@/components/blocks/footer/FooterVariant02";
 import { getNavigationBySlug, getSiteSettings } from "@/sanity/utils/queries";
 
@@ -27,6 +28,7 @@ const Layout = async ({ children }) => {
 
   return (
     <>
+      {!isStarterSite && <AnnouncementBar siteSettings={siteSettings} />}
       {isStarterSite ? (
         <HeaderVariantStarter />
       ) : (
