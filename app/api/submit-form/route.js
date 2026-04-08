@@ -5,7 +5,7 @@ import clientConfig from "@/sanity/config/clientConfig";
 
 const sanityWriteClient = createClient({
   ...clientConfig,
-  token: process.env.SANITY_WRITE_TOKEN,
+  token: process.env.SANITY_TOKEN,
   useCdn: false,
 });
 
