@@ -11,6 +11,7 @@ import { codeInput } from "@sanity/code-input";
 import { media } from "sanity-plugin-media";
 import { structure } from "./sanity/structure";
 import { copyPastePlugin } from "@superside-oss/sanity-plugin-copy-paste";
+import { BulkDelete } from "sanity-plugin-bulk-delete";
 import { viewPageAction } from "./sanity/actions/viewPageAction";
 import { openInEditorAction } from "./sanity/actions/openInEditorAction";
 
@@ -38,6 +39,7 @@ export default defineConfig({
     codeInput(),
     media(),
     copyPastePlugin(),
+    BulkDelete({ schemaTypes }),
   ],
   schema: {
     types: schemaTypes,
