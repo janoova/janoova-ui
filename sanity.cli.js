@@ -1,8 +1,6 @@
-import { projectId } from "@/lib/constants";
-
 module.exports = {
   api: {
-    projectId,
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
     dataset: "production",
   },
 };

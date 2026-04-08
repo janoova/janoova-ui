@@ -265,7 +265,7 @@ ${c.bold}  Manual steps remaining:${c.reset}
   [ ] Update list-item checkmark in CSS
 
   ${c.yellow}Integrations${c.reset}
-  [ ] Update general contact form (Formspark)
+  [ ] Update general contact form email notification
   [ ] Update CTA data for blog posts
 
   ${c.yellow}Deployment (Vercel)${c.reset}

@@ -12,7 +12,9 @@
     "start": "next start",
     "lint": "next lint",
     "pagespeed:report": "node scripts/route-bundle-report.mjs",
-    "create": "node scripts/create-janoova-app.mjs"
+    "create": "node scripts/create-janoova-app.mjs",
+    "seed:export": "node scripts/seed-export.mjs",
+    "seed:import": "node scripts/seed-import.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.2",
