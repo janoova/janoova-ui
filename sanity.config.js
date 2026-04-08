@@ -12,6 +12,7 @@ import { media } from "sanity-plugin-media";
 import { structure } from "./sanity/structure";
 import { copyPastePlugin } from "@superside-oss/sanity-plugin-copy-paste";
 import { viewPageAction } from "./sanity/actions/viewPageAction";
+import { openInEditorAction } from "./sanity/actions/openInEditorAction";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore"]);
 const singletonTypes = new Set(["site_settings", "global_team"]);
@@ -51,7 +52,7 @@ export default defineConfig({
         return input.filter(({ action }) => action && singletonActions.has(action));
       }
       if (["page", "post"].includes(context.schemaType)) {
-        return [...input, viewPageAction];
+        return [...input, viewPageAction, openInEditorAction];
       }
       return input;
     },

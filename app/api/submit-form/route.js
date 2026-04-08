@@ -67,7 +67,11 @@ export async function POST(req) {
 
     const emailHtml = `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-        <h2 style="color:#333;border-bottom:2px solid #eee;padding-bottom:12px">New Form Submission</h2>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid #eee">
+          <img src="https://cdn.sanity.io/images/l0za69l5/production/bca4ca7fbdfc8fffb71861187884056a822530a1-1925x1926.png" alt="Janoova" width="36" height="36" style="border-radius:8px;display:block" />
+          <span style="font-size:15px;font-weight:600;color:#333">Janoova Forms</span>
+        </div>
+        <h2 style="color:#333;margin-top:0;margin-bottom:12px">New Form Submission</h2>
         <p style="color:#666;margin-bottom:20px">
           <strong>Form:</strong> ${formTitle || "—"}<br/>
           <strong>Page:</strong> ${formData.page_url || "—"}<br/>

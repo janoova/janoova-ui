@@ -27,11 +27,18 @@ const globalFont = Outfit({
   variable: "--t-font-family--outfit",
 });
 
-export const metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"
-  ),
-};
+export async function generateMetadata() {
+  const siteSettings = await getSiteSettings();
+  const base = {
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_BASE_URL || "https://example.com"
+    ),
+  };
+  if (siteSettings?.disable_indexing) {
+    return { ...base, robots: { index: false, follow: false } };
+  }
+  return base;
+}
 
 export default async function RootLayout({ children }) {
   const siteSettings = await getSiteSettings();

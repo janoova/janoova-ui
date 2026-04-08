@@ -1,15 +1,62 @@
 import { css } from "styled-components";
-import { BrandingTheme, DarkTheme } from "@/workspace/theme";
 
-export { DarkTheme };
+/**
+ * workspace/theme.js
+ *
+ * Client-specific theme tokens. This file changes per project.
+ * All other framework files (styles/, components/, etc.) stay identical across deployments.
+ */
 
-const WireframingTheme = css`
+export const DarkTheme = css`
+  .dark {
+    // Typography
+    --t-heading-color: #fafafa;
+    --t-body-color: #a1a1aa;
+    --t-light-text-color: #71717a;
+    // Surfaces
+    --t-cp-base-white: #09090b;
+    --t-cp-base-black: #fafafa;
+    // Misc
+    --t-border-color: #3f3f46;
+    --t-light-background-color: #18181b;
+    --t-pagination-button-color: #27272a;
+    --t-pagination-button-hover-color: #3f3f46;
+    // Form
+    --t-form-label-color: #e4e4e7;
+    --t-form-input-border-color: #3f3f46;
+    --t-form-placeholder-color: #52525b;
+    --t-form-select-selected-color: #27272a;
+    // Glass header
+    --t-header-glass-bg: rgba(9, 9, 11, 0.85);
+    // Box shadows (dark surfaces need higher-opacity dark shadows)
+    --t-box-shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.4);
+    --t-box-shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.4);
+    --t-box-shadow-md: 0px 4px 8px -2px rgba(0, 0, 0, 0.5), 0px 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --t-box-shadow-lg: 0px 12px 16px -4px rgba(0, 0, 0, 0.5), 0px 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --t-box-shadow-xl: 0px 20px 24px -4px rgba(0, 0, 0, 0.5), 0px 8px 8px -4px rgba(0, 0, 0, 0.3);
+    --t-box-shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.6);
+    --t-box-shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.55);
+    // Brand colors in dark mode — override for this client
+    --t-primary-branding-color: #ff6a2e;
+    --t-primary-branding-hover-color: #ff5518;
+    --t-secondary-branding-color: #0a4a4e;
+    --t-secondary-branding-hover-color: #0d5f64;
+  }
+
+  // Header: remove border-bottom and fix the hardcoded light shadow
+  .dark .b__header__variant01 {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+`;
+
+export const BrandingTheme = css`
   :root {
     // Theme colors
-    --t-primary-branding-color: rgb(0, 0, 0);
-    --t-primary-branding-hover-color: rgb(50, 50, 50);
-    --t-secondary-branding-color: #333;
-    --t-secondary-branding-hover-color: #555;
+    --t-primary-branding-color: #ff4800;
+    --t-primary-branding-hover-color: #df4204ff;
+    --t-secondary-branding-color: #03272a;
+    --t-secondary-branding-hover-color: #011618ff;
     // Buttons
     --t-button-padding: 0.575rem 1.7rem;
     --t-button-padding-large: 0.75rem 1.7rem;
@@ -91,7 +138,7 @@ const WireframingTheme = css`
     --t-form-input-box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     --t-form-input-border-radius: 8px;
     --t-form-input-focus-border-color: var(--t-primary-branding-color);
-    --t-form-input-focus-box-shadow: 0px 0px 0px 4px #780df21f;
+    --t-form-input-focus-box-shadow: 0px 0px 0px 4px #f28d0d1f;
     --t-form-input-border-color: #d4d4d4;
     --t-form-placeholder-color: #a8a9ab;
     --t-form-select-selected-color: #f4f4f5;
@@ -112,14 +159,18 @@ const WireframingTheme = css`
     --t-box-shadow-3xl: 0px 32px 64px -12px rgba(16, 24, 40, 0.14);
     // Misc
     --t-border-color: #eee;
-    --t-light-background-color: #f6f6f6;
+    --t-light-background-color: #fffaf7;
     --t-light-text-color: #686868;
     --t-global-card-border-radius: 16px;
     --t-global-image-border-radius: 16px;
     --t-pagination-button-color: var(--t-light-background-color);
-    --t-pagination-button-hover-color: #f5f1f9;
+    --t-pagination-button-hover-color: #faf5f2;
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
+    // Header
+    --t-header-glass-bg: rgba(255, 255, 255, 0.8);
+    // Inverted text (e.g. white text on dark/colored backgrounds — stays light in all modes)
+    --t-inverted-text-color: #ffffff;
     // Blobs
     --t-blob-color-1: var(--t-primary-branding-color);
     --t-blob-color-2: #28ffea;
@@ -134,122 +185,3 @@ const WireframingTheme = css`
     --t-cp-success-400: #78da4e;
   }
 `;
-
-// Starter Theme Overrides — default (light) and dark per starter
-const starterThemes = {
-  law: {
-    default: css`
-      :root {
-        --t-primary-branding-color: #203e42;
-        --t-primary-branding-hover-color: #152a2dff;
-        --t-secondary-branding-color: #744210;
-        --t-secondary-branding-hover-color: #975a16;
-        --t-border-color: #eee;
-        --t-light-background-color: #fffaf7;
-        --t-font-family-heading:
-          var(--t-font-family--lora), var(--t-font-family-system);
-        --t-font-family-body:
-          var(--t-font-family--lora), var(--t-font-family-system);
-        --t-font-weight-heading: 400;
-      }
-    `,
-    dark: css`
-      .dark {
-        --t-primary-branding-color: #4a9da8;
-        --t-primary-branding-hover-color: #5bb8c4;
-        --t-secondary-branding-color: #c48a3a;
-        --t-secondary-branding-hover-color: #d9a04f;
-        --t-light-background-color: #0f1e20;
-      }
-    `,
-  },
-  medical: {
-    default: css`
-      :root {
-        --t-primary-branding-color: #0369a1;
-        --t-primary-branding-hover-color: #0284c7;
-        --t-secondary-branding-color: #059669;
-        --t-secondary-branding-hover-color: #10b981;
-        --t-heading-color: #1e293b;
-        --t-body-color: #334155;
-        --t-light-background-color: #f0f9ff;
-        --t-blob-color-1: #0369a1;
-        --t-blob-color-2: #06b6d4;
-        --t-blob-color-3: #059669;
-        --t-blob-color-4: #8b5cf6;
-      }
-    `,
-    dark: css`
-      .dark {
-        --t-primary-branding-color: #38bdf8;
-        --t-primary-branding-hover-color: #7dd3fc;
-        --t-secondary-branding-color: #34d399;
-        --t-secondary-branding-hover-color: #6ee7b7;
-        --t-light-background-color: #0c1a27;
-      }
-    `,
-  },
-  restaurant: {
-    default: css`
-      :root {
-        --t-primary-branding-color: #dc2626;
-        --t-primary-branding-hover-color: #ef4444;
-        --t-secondary-branding-color: #ea580c;
-        --t-secondary-branding-hover-color: #f97316;
-        --t-heading-color: #18181b;
-        --t-body-color: #27272a;
-        --t-light-background-color: #fef2f2;
-        --t-blob-color-1: #dc2626;
-        --t-blob-color-2: #ea580c;
-        --t-blob-color-3: #f59e0b;
-        --t-blob-color-4: #eab308;
-      }
-    `,
-    dark: css`
-      .dark {
-        --t-primary-branding-color: #f87171;
-        --t-primary-branding-hover-color: #fca5a5;
-        --t-secondary-branding-color: #fb923c;
-        --t-secondary-branding-hover-color: #fdba74;
-        --t-light-background-color: #1c0a0a;
-      }
-    `,
-  },
-  // Add more starter themes here...
-};
-
-// Get the active starter slug from the URL pathname
-const getActiveStarterSlug = () => {
-  if (typeof window === "undefined") return null;
-  const match = window.location.pathname.match(/\/starters\/([^\/]+)/);
-  return match?.[1] ?? null;
-};
-
-// Check for default theme query param
-const hasDefaultTheme =
-  typeof window !== "undefined" &&
-  new URLSearchParams(window.location.search).has("default_theme");
-
-// Build the theme
-const buildTheme = () => {
-  if (hasDefaultTheme) {
-    return WireframingTheme;
-  }
-
-  const starterSlug = getActiveStarterSlug();
-  const starter = starterSlug ? starterThemes[starterSlug] : null;
-
-  if (starter) {
-    return css`
-      ${BrandingTheme}
-      ${starter.default}
-      ${starter.dark}
-    `;
-  }
-
-  return BrandingTheme;
-};
-
-const Theme = buildTheme();
-
-export default Theme;

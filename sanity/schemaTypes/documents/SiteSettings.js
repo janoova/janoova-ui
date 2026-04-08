@@ -8,6 +8,7 @@ export default defineType({
     { name: "general", title: "General", default: true },
     { name: "footer", title: "Footer" },
     { name: "social", title: "Social" },
+    { name: "seo", title: "SEO" },
     { name: "legal", title: "Legal" },
     { name: "integrations", title: "Integrations" },
   ],
@@ -144,6 +145,15 @@ export default defineType({
       type: "boolean",
       initialValue: false,
       group: "general",
+    }),
+    defineField({
+      name: "disable_indexing",
+      title: "Disable Site Indexing",
+      description:
+        "⚠️ Warning: When enabled, this instructs all search engines to not index any page on this website. Use only for staging/private sites.",
+      type: "boolean",
+      initialValue: false,
+      group: "seo",
     }),
     defineField({
       name: "privacy_policy_url",
