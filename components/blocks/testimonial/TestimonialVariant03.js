@@ -10,7 +10,7 @@ import { ConditionalBlurFade } from "@/components/ui/RevealAnimations";
 import { FaLinkedin } from "react-icons/fa";
 import { getCleanValue, parseArrayString } from "@/lib/helpers";
 import Button from "@/components/ui/Button";
-import Modal from "@/components/ui/Modal";
+import TestimonialVariant03Modal from "./TestimonialVariant03Modal";
 import RichtextField from "@/components/ui/RichtextField";
 import BorderBeamClient from "@/components/ui/BorderBeamClient";
 import { fallbackImageBlurDataUrl } from "@/lib/constants";
@@ -315,7 +315,7 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
 
       {/* Modal */}
       {shouldShowModal && (
-        <Modal modalId={modalId}>
+        <TestimonialVariant03Modal modalId={modalId}>
           <div className="space-y-6 pt-[1rem]">
             {/* Person Info */}
             <div className="flex items-start gap-5 pb-[1.85rem] border-b">
@@ -360,7 +360,7 @@ const TestimonialVariant03 = ({ data = {}, index }) => {
               </div>
             )}
           </div>
-        </Modal>
+        </TestimonialVariant03Modal>
       )}
     </Bounded>
   );

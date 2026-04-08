@@ -1,16 +1,14 @@
 import { getSiteSettings } from "@/sanity/utils/queries";
-import ModalVariant01Client from "./client/ModalVariant01Client";
+import ModalVariant01Loader from "./ModalVariant01Loader";
 
 const ModelVariant01 = async ({ data = {}, index }) => {
   const siteSettings = await getSiteSettings();
   return (
-    <>
-      <ModalVariant01Client
-        index={index}
-        siteSettings={siteSettings}
-        data={data}
-      />
-    </>
+    <ModalVariant01Loader
+      index={index}
+      siteSettings={siteSettings}
+      data={data}
+    />
   );
 };
 

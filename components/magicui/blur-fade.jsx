@@ -1,11 +1,9 @@
-"use client";;
-import { AnimatePresence, motion, useInView } from "motion/react";
-import { useRef } from "react";
+"use client";
+import { useRef, useState, useEffect } from "react";
 
 export function BlurFade({
   children,
   className,
-  variant,
   duration = 0.4,
   delay = 0,
   offset = 6,
@@ -13,42 +11,48 @@ export function BlurFade({
   inView = false,
   inViewMargin = "-50px",
   blur = "6px",
-  ...props
 }) {
   const ref = useRef(null);
-  const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-  const isInView = !inView || inViewResult;
-  const defaultVariants = {
-    hidden: {
-      [direction === "left" || direction === "right" ? "x" : "y"]:
-        direction === "right" || direction === "down" ? -offset : offset,
-      opacity: 0,
-      filter: `blur(${blur})`,
-    },
-    visible: {
-      [direction === "left" || direction === "right" ? "x" : "y"]: 0,
-      opacity: 1,
-      filter: `blur(0px)`,
-    },
-  };
-  const combinedVariants = variant || defaultVariants;
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (!inView) {
+      setIsInView(true);
+      return;
+    }
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: inViewMargin }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [inView, inViewMargin]);
+
+  const axis = direction === "left" || direction === "right" ? "X" : "Y";
+  const sign = direction === "right" || direction === "down" ? -1 : 1;
+  const totalDelay = 0.04 + delay;
+
   return (
-    (<AnimatePresence>
-      <motion.div
-        ref={ref}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        exit="hidden"
-        variants={combinedVariants}
-        transition={{
-          delay: 0.04 + delay,
-          duration,
-          ease: "easeOut",
-        }}
-        className={className}
-        {...props}>
-        {children}
-      </motion.div>
-    </AnimatePresence>)
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: isInView ? 1 : 0,
+        filter: isInView ? "blur(0px)" : `blur(${blur})`,
+        transform: isInView
+          ? `translate${axis}(0px)`
+          : `translate${axis}(${sign * offset}px)`,
+        transition: `opacity ${duration}s ease-out ${totalDelay}s, filter ${duration}s ease-out ${totalDelay}s, transform ${duration}s ease-out ${totalDelay}s`,
+      }}
+    >
+      {children}
+    </div>
   );
 }
