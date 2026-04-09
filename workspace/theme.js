@@ -9,46 +9,82 @@ import { css } from "styled-components";
 
 export const DarkTheme = css`
   .dark {
-    // Typography
-    --t-heading-color: #fafafa;
-    --t-body-color: #a1a1aa;
-    --t-light-text-color: #71717a;
-    // Surfaces
-    --t-cp-base-white: #09090b;
-    --t-cp-base-black: #fafafa;
+    // Typography — optimized for brand-focused dark mode
+    --t-heading-color: #f8fafc;
+    --t-body-color: #cbd5e1;
+    --t-light-text-color: #94a3b8;
+    // Surfaces — deep, based on brand color family
+    --t-cp-base-white: #0a1118;
+    --t-cp-base-black: #f8fafc;
     // Misc
-    --t-border-color: #3f3f46;
-    --t-light-background-color: #18181b;
-    --t-pagination-button-color: #27272a;
-    --t-pagination-button-hover-color: #3f3f46;
+    --t-border-color: #14211b;
+    --t-light-background-color: #070a0d;
+    --t-pagination-button-color: #070a0d;
+    --t-pagination-button-hover-color: #14211b;
     // Form
-    --t-form-label-color: #e4e4e7;
-    --t-form-input-border-color: #3f3f46;
-    --t-form-placeholder-color: #52525b;
-    --t-form-select-selected-color: #27272a;
+    --t-form-title-color: var(--t-primary-branding-color);
+    --t-form-label-color: #e2e8f0;
+    --t-form-help-text-color: var(--t-body-color);
+    --t-form-input-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    --t-form-input-border-radius: 8px;
+    --t-form-input-focus-border-color: var(--t-primary-branding-color);
+    --t-form-input-focus-box-shadow: 0px 0px 0px 4px rgba(110, 137, 123, 0.2);
+    --t-form-input-border-color: #14211b;
+    --t-form-placeholder-color: #6b8d7f;
+    --t-form-select-selected-color: #0a1118;
+    --t-cp-error-50: rgba(239, 68, 68, 0.15);
     // Glass header
-    --t-header-glass-bg: rgba(9, 9, 11, 0.85);
-    // Box shadows (dark surfaces need higher-opacity dark shadows)
-    --t-box-shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.4);
-    --t-box-shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.4);
-    --t-box-shadow-md: 0px 4px 8px -2px rgba(0, 0, 0, 0.5), 0px 2px 4px -2px rgba(0, 0, 0, 0.4);
-    --t-box-shadow-lg: 0px 12px 16px -4px rgba(0, 0, 0, 0.5), 0px 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --t-box-shadow-xl: 0px 20px 24px -4px rgba(0, 0, 0, 0.5), 0px 8px 8px -4px rgba(0, 0, 0, 0.3);
-    --t-box-shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.6);
-    --t-box-shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.55);
-    // Brand colors in dark mode — override for this client
-    --t-primary-branding-color: #ff6a2e;
-    --t-primary-branding-hover-color: #ff5518;
-    --t-secondary-branding-color: #0a4a4e;
-    --t-secondary-branding-hover-color: #0d5f64;
+    --t-header-glass-bg: rgba(10, 17, 24, 0.92);
+    // Box shadows
+    --t-box-shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    --t-box-shadow-sm:
+      0px 1px 3px rgba(0, 0, 0, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.3);
+    --t-box-shadow-md:
+      0px 4px 8px -2px rgba(0, 0, 0, 0.6), 0px 2px 4px -2px rgba(0, 0, 0, 0.3);
+    --t-box-shadow-lg:
+      0px 12px 16px -4px rgba(0, 0, 0, 0.6),
+      0px 4px 6px -2px rgba(0, 0, 0, 0.25);
+    --t-box-shadow-xl:
+      0px 20px 24px -4px rgba(0, 0, 0, 0.6), 0px 8px 8px -4px rgba(0, 0, 0, 0.2);
+    --t-box-shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.65);
+    --t-box-shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.6);
+    // Brand colors — kept similar, optimized for dark mode
+    --t-primary-branding-color: #6e897b;
+    --t-primary-branding-hover-color: #7d9b89;
+    --t-secondary-branding-color: #1e2b45;
+    --t-secondary-branding-hover-color: #2a3d5a;
   }
 
-  // Header: remove border-bottom and fix the hardcoded light shadow
-  .dark .b__header__variant01 {
-    border-bottom-color: transparent;
-    box-shadow: none;
+  .dark {
+    .b__header__variant01 {
+      border-bottom-color: transparent;
+      box-shadow: none;
+    }
+    .b__cta__variant02 {
+      background-color: #000;
+    }
+    body {
+      background-color: var(--t-cp-base-white);
+    }
+    .border-beam {
+      background-image: radial-gradient(
+        #000,
+        #000,
+        var(--t-primary-branding-color),
+        #000000,
+        #000000,
+        #000,
+        #000
+      ) !important;
+    }
   }
 `;
+
+/**
+ * AdditionalStyles — project-specific CSS overrides and additions.
+ * Add any custom styles here to extend or override the base framework styles.
+ */
+export const AdditionalStyles = css``;
 
 export const BrandingTheme = css`
   :root {

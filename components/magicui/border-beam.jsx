@@ -25,7 +25,7 @@ export const BorderBeam = ({
       }>
       <motion.div
         className={cn(
-          "absolute aspect-square",
+          "border-beam absolute aspect-square",
           "bg-gradient-to-l from-[var(--color-from)] via-[var(--color-to)] to-transparent",
           className
         )}

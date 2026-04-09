@@ -44,8 +44,8 @@ const AnnouncementBar = ({ siteSettings }) => {
       ? "var(--t-secondary-branding-color)"
       : "var(--t-primary-branding-color)");
 
-  const barBg = isDark ? "#000000" : lightBg;
-  const barBorder = isDark ? "2px solid rgba(255,255,255,0.2)" : "none";
+  const barBg = isDark ? "var(--t-cp-base-white)" : lightBg;
+  const barBorder = isDark ? "1px solid var(--t-border-color)" : "none";
 
   const c = "rgba(255,255,255,0.07)";
 
@@ -78,7 +78,7 @@ const AnnouncementBar = ({ siteSettings }) => {
       style={{ maxHeight: atTop ? "80px" : "0px", opacity: atTop ? 1 : 0 }}
     >
       <div
-        className="relative w-full py-2.5 px-4 overflow-hidden"
+        className="c__announcement-bar relative w-full py-2.5 px-4 overflow-hidden"
         style={{ background: barBg, borderBottom: barBorder }}
       >
         {/* Pattern layer with side fade */}
