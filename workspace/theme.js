@@ -13,6 +13,8 @@ export const DarkTheme = css`
     --t-heading-color: #f8fafc;
     --t-body-color: #cbd5e1;
     --t-light-text-color: #94a3b8;
+    --t-anchor-color: #f8fafc;
+    --t-anchor-hover-color: #94a3b8;
     // Surfaces — deep, based on brand color family
     --t-cp-base-white: #0a1118;
     --t-cp-base-black: #f8fafc;
@@ -174,7 +176,8 @@ export const BrandingTheme = css`
     --t-form-input-box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     --t-form-input-border-radius: 8px;
     --t-form-input-focus-border-color: var(--t-primary-branding-color);
-    --t-form-input-focus-box-shadow: 0px 0px 0px 4px #f28d0d1f;
+    --t-form-input-focus-box-shadow: 0px 0px 0px 4px
+      color-mix(in srgb, var(--t-primary-branding-color) 12%, transparent);
     --t-form-input-border-color: #d4d4d4;
     --t-form-placeholder-color: #a8a9ab;
     --t-form-select-selected-color: #f4f4f5;

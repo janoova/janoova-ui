@@ -14,6 +14,15 @@ const Component = styled.div`
   overflow: hidden;
   .c__button--link {
     color: var(--t-cp-base-white) !important;
+    &:hover {
+      color: var(--t-cp-base-white) !important;
+    }
+  }
+  .dark & .c__button--link {
+    color: var(--t-anchor-color) !important;
+    &:hover {
+      color: var(--t-anchor-hover-color) !important;
+    }
   }
   .c__background-tint {
     /* background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)); */
