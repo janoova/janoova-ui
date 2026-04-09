@@ -20,7 +20,7 @@ export const DarkTheme = css`
     --t-cp-base-black: #f8fafc;
     // Misc
     --t-border-color: #14211b;
-    --t-light-background-color: #070a0d;
+    --t-light-background-color: #050d14;
     --t-pagination-button-color: #070a0d;
     --t-pagination-button-hover-color: #14211b;
     // Form
@@ -62,8 +62,9 @@ export const DarkTheme = css`
       border-bottom-color: transparent;
       box-shadow: none;
     }
-    .b__cta__variant02 {
-      background-color: #000;
+    .b__cta__variant02,
+    .b__hero__variant03 {
+      background-color: var(--t-light-background-color) !important;
     }
     body {
       background-color: var(--t-cp-base-white);
