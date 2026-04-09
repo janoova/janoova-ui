@@ -63,7 +63,8 @@ export const DarkTheme = css`
       box-shadow: none;
     }
     .b__cta__variant02,
-    .b__hero__variant03 {
+    .b__hero__variant03,
+    .u__background-primary {
       background-color: var(--t-light-background-color) !important;
     }
     body {
