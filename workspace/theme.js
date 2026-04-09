@@ -51,10 +51,10 @@ export const DarkTheme = css`
     --t-box-shadow-2xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.65);
     --t-box-shadow-3xl: 0px 32px 64px -12px rgba(0, 0, 0, 0.6);
     // Brand colors — kept similar, optimized for dark mode
-    --t-primary-branding-color: #6e897b;
-    --t-primary-branding-hover-color: #7d9b89;
-    --t-secondary-branding-color: #1e2b45;
-    --t-secondary-branding-hover-color: #2a3d5a;
+    --t-primary-branding-color: #ff4800;
+    --t-primary-branding-hover-color: #df4204ff;
+    --t-secondary-branding-color: #03272a;
+    --t-secondary-branding-hover-color: #011618ff;
   }
 
   .dark {
@@ -70,7 +70,8 @@ export const DarkTheme = css`
     body {
       background-color: var(--t-cp-base-white);
     }
-    .border-beam {
+
+    .shine-border {
       background-image: radial-gradient(
         #000,
         #000,
@@ -80,6 +81,9 @@ export const DarkTheme = css`
         #000,
         #000
       ) !important;
+    }
+    .b__header__variant01__navigation-board__tint--active {
+      background: rgba(0, 0, 0, 0.7) !important;
     }
   }
 `;

@@ -37,7 +37,7 @@ export function ShineBorder({
         }
       }
       className={cn(
-        "border-beam pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position] motion-safe:animate-shine",
+        "shine-border pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position] motion-safe:animate-shine",
         className
       )}
       {...props} />)

@@ -18,6 +18,7 @@ import FontSelectorGate from "@/components/wrappers/FontSelectorGate";
 import DynamicFontLoader from "@/components/wrappers/DynamicFontLoader";
 import ThemeProvider from "@/components/wrappers/ThemeProvider";
 import OrganizationJsonLd from "@/components/wrappers/OrganizationJsonLd";
+import GlobalCustomCSS from "@/components/wrappers/GlobalCustomCSS";
 import { getSiteSettings } from "@/sanity/utils/queries";
 
 const globalFont = Outfit({
@@ -71,6 +72,7 @@ export default async function RootLayout({ children }) {
         <StyledComponentsRegistry>
           <ThemeProvider>
             <GlobalStyles />
+            <GlobalCustomCSS css={siteSettings?.global_custom_css?.code} />
             <Layout>{children}</Layout>
           </ThemeProvider>
         </StyledComponentsRegistry>

@@ -20,6 +20,9 @@ export default async function Page({ params }) {
 
   return (
     <>
+      {data?.scoped_css?.code && (
+        <style dangerouslySetInnerHTML={{ __html: data.scoped_css.code }} />
+      )}
       {data?.page_builder?.map((elem, index) => {
         return <PageBuilder key={elem._key} data={elem} index={index} />;
       })}

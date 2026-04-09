@@ -32,8 +32,11 @@ const Wrapper = styled.div`
 const FooterVariant02 = ({
   siteSettings,
   navigationSchema,
-  copyright = `© ${new Date().getFullYear()} ${organization}. All rights reserved.`,
 }) => {
+  const year = new Date().getFullYear();
+  const copyright = siteSettings?.footer_copyright_text
+    ? `© ${year} ${siteSettings.footer_copyright_text}`
+    : `© ${year} ${organization}. All rights reserved.`;
   const { isDark, toggleTheme } = useTheme();
 
   const socialLinks = [

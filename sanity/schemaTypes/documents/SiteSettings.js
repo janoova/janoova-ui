@@ -12,6 +12,7 @@ export default defineType({
     { name: "seo", title: "SEO" },
     { name: "legal", title: "Legal" },
     { name: "integrations", title: "Integrations" },
+    { name: "styling", title: "Custom CSS" },
   ],
   fields: [
     defineField({
@@ -147,6 +148,13 @@ export default defineType({
       group: "announcement",
     }),
     defineField({
+      name: "footer_copyright_text",
+      title: "Copyright Text",
+      description: `Replaces the default copyright line. The year is always prepended automatically — just enter the text after it, e.g. "Janoova. All rights reserved."`,
+      type: "string",
+      group: "footer",
+    }),
+    defineField({
       name: "footer_description",
       title: "Footer Description",
       type: "text",
@@ -238,6 +246,17 @@ export default defineType({
       title: "Terms URL",
       type: "string",
       group: "legal",
+    }),
+    defineField({
+      name: "global_custom_css",
+      title: "Global Custom CSS",
+      description: "Applied site-wide. Useful for overrides that can't be done in theme.js.",
+      type: "code",
+      options: {
+        language: "scss",
+        languageAlternatives: [{ title: "SCSS / CSS", value: "scss" }],
+      },
+      group: "styling",
     }),
   ],
   preview: {

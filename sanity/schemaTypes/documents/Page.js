@@ -3,6 +3,7 @@ import { isUniqueAcrossAllDocuments } from "@/sanity/utils/helpers";
 import { defineField, defineArrayMember } from "sanity";
 import { createDocumentArray } from "@/sanity/utils/helpers";
 import pageBuilderBlocks from "../blocks";
+import { scopedCss } from "@/sanity/schemaTypes/blocks/defaultFields";
 
 const Page = {
   name: "page",
@@ -77,6 +78,7 @@ const Page = {
         },
       ],
     },
+    defineField(scopedCss),
     defineField({
       name: "page_builder",
       title: "Page Builder",
