@@ -241,6 +241,16 @@ export default defineType({
       group: "integrations",
     }),
     defineField({
+      name: "recaptcha_min_score",
+      title: "reCAPTCHA Minimum Score",
+      description: "Submissions scoring below this threshold are rejected (0.0 = allow all, 1.0 = block all). Google recommends 0.5 as a baseline; 0.3 is more lenient for contact forms.",
+      type: "number",
+      initialValue: 0.3,
+      group: "integrations",
+      validation: (Rule) =>
+        Rule.min(0).max(1).precision(1),
+    }),
+    defineField({
       name: "enable_top_loader",
       title: "Enable Top Loader",
       description: "Show a progress bar at the top of the page on route changes.",

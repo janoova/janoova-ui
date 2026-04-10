@@ -24,16 +24,17 @@ export async function POST(req) {
     // reCAPTCHA v3 verification
     if (recaptchaToken) {
       const settings = await sanityWriteClient.fetch(
-        `*[_type == "site_settings"][0]{ recaptcha_secret_key }`
+        `*[_type == "site_settings"][0]{ recaptcha_secret_key, recaptcha_min_score }`
       );
       const secretKey = settings?.recaptcha_secret_key;
+      const minScore = settings?.recaptcha_min_score ?? 0.3;
       if (secretKey) {
         const verifyRes = await fetch(
           `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`,
           { method: "POST" }
         );
         const verifyData = await verifyRes.json();
-        if (!verifyData.success || verifyData.score < 0.5) {
+        if (!verifyData.success || verifyData.score < minScore) {
           return NextResponse.json(
             { success: false, error: "reCAPTCHA verification failed" },
             { status: 400 }
