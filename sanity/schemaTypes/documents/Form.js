@@ -43,6 +43,13 @@ const Form = {
       title: "Redirect URL",
       type: "string",
     },
+    {
+      name: "enable_recaptcha",
+      title: "Enable reCAPTCHA",
+      description: "Verify submissions with Google reCAPTCHA v3. Requires reCAPTCHA keys in Site Settings > Integrations.",
+      type: "boolean",
+      initialValue: false,
+    },
   ],
   preview: {
     select: {

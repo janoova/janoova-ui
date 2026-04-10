@@ -14,11 +14,32 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { formData, formTitle, notificationEmail, fieldLabels = {} } = body;
+    const { formData, formTitle, notificationEmail, fieldLabels = {}, recaptchaToken } = body;
 
     // Honeypot check — bots fill this field, humans don't
     if (formData._honeypot) {
       return NextResponse.json({ success: true });
+    }
+
+    // reCAPTCHA v3 verification
+    if (recaptchaToken) {
+      const settings = await sanityWriteClient.fetch(
+        `*[_type == "site_settings"][0]{ recaptcha_secret_key }`
+      );
+      const secretKey = settings?.recaptcha_secret_key;
+      if (secretKey) {
+        const verifyRes = await fetch(
+          `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`,
+          { method: "POST" }
+        );
+        const verifyData = await verifyRes.json();
+        if (!verifyData.success || verifyData.score < 0.5) {
+          return NextResponse.json(
+            { success: false, error: "reCAPTCHA verification failed" },
+            { status: 400 }
+          );
+        }
+      }
     }
 
     // Build field list excluding internal fields

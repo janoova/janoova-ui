@@ -73,6 +73,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
     button_title: formButtonTitle,
     redirect_url,
     thankyou_message,
+    enable_recaptcha,
   } = data?.form || {};
 
   const { formMessage, payloadPosting, onSubmit } = useFormSubmission({
@@ -82,6 +83,7 @@ const HeroVariant05 = ({ data = {}, index }) => {
     thankyou_message,
     redirect_url,
     reset,
+    enableRecaptcha: enable_recaptcha,
   });
 
   const beamColorList = (() => {

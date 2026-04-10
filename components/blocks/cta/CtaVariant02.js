@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { BackgroundPattern } from "@/components/ui/BackgroundPatterns";
 import { ConditionalBlurFade } from "@/components/ui/RevealAnimations";
 import BackgroundImageWithTint from "@/components/ui/BackgroundImageWithTint";
+import urlFor from "@/lib/imageUrlBuilder";
 
 const Wrapper = styled.div`
   .b__cta__variant02 {
@@ -41,7 +42,7 @@ const CtaVariant02 = ({ data = {}, index }) => {
         <BackgroundPattern
           patternType={data.background_pattern_type ?? `dots`}
           className={cn(
-            "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]"
+            "[mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]",
           )}
         />
       )}

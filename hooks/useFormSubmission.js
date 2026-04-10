@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getCleanValue, checkValidJS } from "@/lib/helpers";
 import { stegaClean } from "@sanity/client/stega";
+import { useRecaptchaSiteKey } from "@/components/wrappers/RecaptchaProvider";
 
 export const useFormSubmission = ({
   form_title,
@@ -10,7 +11,9 @@ export const useFormSubmission = ({
   redirect_url,
   reset,
   gtm_event_name = "form-submission-success",
+  enableRecaptcha = false,
 }) => {
+  const recaptchaSiteKey = useRecaptchaSiteKey();
   const [formMessage, setFormMessage] = useState(null);
   const [payloadPosting, setPayloadPosting] = useState(false);
 
@@ -32,6 +35,16 @@ export const useFormSubmission = ({
         }
       } catch (_) {}
 
+      // Execute reCAPTCHA v3 if enabled
+      let recaptchaToken = null;
+      if (enableRecaptcha && recaptchaSiteKey && typeof window !== "undefined" && window.grecaptcha) {
+        recaptchaToken = await new Promise((resolve) => {
+          window.grecaptcha.ready(() => {
+            window.grecaptcha.execute(recaptchaSiteKey, { action: "submit" }).then(resolve);
+          });
+        });
+      }
+
       const response = await fetch("/api/submit-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -40,6 +53,7 @@ export const useFormSubmission = ({
           formTitle: getCleanValue(form_title),
           notificationEmail: getCleanValue(notification_email),
           fieldLabels,
+          recaptchaToken,
         }),
       });
 

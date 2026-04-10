@@ -20,6 +20,8 @@ import ThemeProvider from "@/components/wrappers/ThemeProvider";
 import OrganizationJsonLd from "@/components/wrappers/OrganizationJsonLd";
 import GlobalCustomCSS from "@/components/wrappers/GlobalCustomCSS";
 import { getSiteSettings } from "@/sanity/utils/queries";
+import Script from "next/script";
+import { RecaptchaProvider } from "@/components/wrappers/RecaptchaProvider";
 
 const globalFont = Outfit({
   subsets: ["latin"],
@@ -45,6 +47,8 @@ export default async function RootLayout({ children }) {
   const siteSettings = await getSiteSettings();
   const gtmId = siteSettings?.gtm_id;
   const enableTopLoader = siteSettings?.enable_top_loader;
+  const recaptchaSiteKey = siteSettings?.recaptcha_site_key;
+  const recaptchaHideBadge = siteSettings?.recaptcha_hide_badge;
   return (
     <html lang="en" className={globalFont.variable} suppressHydrationWarning>
       <body
@@ -57,6 +61,15 @@ export default async function RootLayout({ children }) {
           }}
         />
         {gtmId && <GoogleTagManager gtmId={gtmId} />}
+        {recaptchaSiteKey && (
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+            strategy="lazyOnload"
+          />
+        )}
+        {recaptchaSiteKey && recaptchaHideBadge && (
+          <style>{`.grecaptcha-badge { visibility: hidden; }`}</style>
+        )}
         <Suspense fallback={null}>
           <GTMTracker />
         </Suspense>
@@ -71,9 +84,11 @@ export default async function RootLayout({ children }) {
         <OrganizationJsonLd />
         <StyledComponentsRegistry>
           <ThemeProvider>
-            <GlobalStyles />
-            <GlobalCustomCSS css={siteSettings?.global_custom_css?.code} />
-            <Layout>{children}</Layout>
+            <RecaptchaProvider recaptchaSiteKey={recaptchaSiteKey}>
+              <GlobalStyles />
+              <GlobalCustomCSS css={siteSettings?.global_custom_css?.code} />
+              <Layout>{children}</Layout>
+            </RecaptchaProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>
         <VisualEditingControls />

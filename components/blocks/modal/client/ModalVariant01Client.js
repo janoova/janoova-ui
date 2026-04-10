@@ -39,6 +39,7 @@ const ModelVariant01Client = ({ data = {}, index, siteSettings }) => {
     button_title: formButtonTitle,
     redirect_url,
     thankyou_message,
+    enable_recaptcha,
   } = data?.form || {};
 
   const { formMessage, payloadPosting, onSubmit } = useFormSubmission({
@@ -48,6 +49,7 @@ const ModelVariant01Client = ({ data = {}, index, siteSettings }) => {
     thankyou_message,
     redirect_url,
     reset,
+    enableRecaptcha: enable_recaptcha,
   });
 
   if (!data?.modal_id) {
