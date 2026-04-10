@@ -49,11 +49,14 @@ export default async function RootLayout({ children }) {
   const enableTopLoader = siteSettings?.enable_top_loader;
   const recaptchaSiteKey = siteSettings?.recaptcha_site_key;
   const recaptchaHideBadge = siteSettings?.recaptcha_hide_badge;
+  const headerVariant = siteSettings?.header_variant ?? "variant02";
+  const headerBodyClass = `g__header-${headerVariant.replace("_", "--")}`;
   return (
     <html lang="en" className={globalFont.variable} suppressHydrationWarning>
       <body
         data-url={process.env.NEXT_PUBLIC_VERCEL_URL}
         data-prod-url={process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}
+        className={headerBodyClass}
       >
         <script
           dangerouslySetInnerHTML={{

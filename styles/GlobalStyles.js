@@ -133,7 +133,7 @@ const Styles = css`
     background: unset;
   }
 
-  #main-content .bounded-section-idx-0 {
+  body.g__header-variant01--glass #main-content .bounded-section-idx-0 {
     @media (min-width: 992px) {
       padding-top: 10rem;
     }
