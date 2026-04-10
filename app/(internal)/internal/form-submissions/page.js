@@ -5,7 +5,6 @@ import FormSubmissionsClient from "./FormSubmissionsClient";
 
 export const metadata = {
   title: "Form Submissions",
-  robots: { index: false, follow: false },
 };
 
 // Always fresh — no caching for internal data

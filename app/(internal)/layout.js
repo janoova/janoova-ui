@@ -1,17 +1,24 @@
 import "@/app/(frontend)/globals.css";
-import { Outfit } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
-const globalFont = Outfit({
+const geistSans = Geist({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  variable: "--font-outfit",
+  variable: "--font-geist-sans",
 });
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
+export const metadata = {
+  robots: { index: false, follow: false },
+};
 
 export default function InternalLayout({ children }) {
   return (
-    <html lang="en" className={globalFont.variable}>
-      <body className={`${globalFont.className} bg-background text-foreground antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.className} bg-background text-foreground antialiased`}>
         {children}
       </body>
     </html>

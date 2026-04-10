@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { format } from "date-fns";
-import { CalendarIcon, X } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -51,10 +52,10 @@ function humanize(name) {
 }
 
 export default function FormSubmissionsClient({ submissions }) {
+  const router = useRouter();
   const [search, setSearch] = useState("");
   const [dateRange, setDateRange] = useState({ from: undefined, to: undefined });
   const [formFilter, setFormFilter] = useState("all");
-  const [selected, setSelected] = useState(null);
 
   const formNames = useMemo(() => {
     const names = [
@@ -155,17 +156,16 @@ export default function FormSubmissionsClient({ submissions }) {
             <Button
               variant="outline"
               className={cn(
-                "w-56 justify-start text-left font-normal",
+                "min-w-44 w-auto justify-start text-left font-normal",
                 !dateRange.from && "text-muted-foreground"
               )}
             >
-              <CalendarIcon className="mr-2 h-4 w-4" />
+              <CalendarIcon className="mr-2 h-4 w-4 shrink-0" />
               {dateRange.from ? (
                 dateRange.to ? (
-                  <>
-                    {format(dateRange.from, "MMM d, yyyy")} —{" "}
-                    {format(dateRange.to, "MMM d, yyyy")}
-                  </>
+                  <span className="truncate">
+                    {format(dateRange.from, "MMM d, yy")} — {format(dateRange.to, "MMM d, yy")}
+                  </span>
                 ) : (
                   format(dateRange.from, "MMM d, yyyy")
                 )
@@ -220,7 +220,8 @@ export default function FormSubmissionsClient({ submissions }) {
             <TableRow>
               <TableHead className="w-48">Date</TableHead>
               <TableHead>Form</TableHead>
-              <TableHead className="hidden md:table-cell">Name</TableHead>
+              <TableHead className="hidden md:table-cell">First Name</TableHead>
+              <TableHead className="hidden md:table-cell">Last Name</TableHead>
               <TableHead className="hidden md:table-cell">Email</TableHead>
               <TableHead className="hidden lg:table-cell">Page</TableHead>
               <TableHead className="w-16"></TableHead>
@@ -230,7 +231,7 @@ export default function FormSubmissionsClient({ submissions }) {
             {filtered.length === 0 && (
               <TableRow>
                 <TableCell
-                  colSpan={6}
+                  colSpan={7}
                   className="text-center text-muted-foreground py-12"
                 >
                   No submissions found.
@@ -238,14 +239,11 @@ export default function FormSubmissionsClient({ submissions }) {
               </TableRow>
             )}
             {filtered.map((s) => {
-              const name = getFieldValue(s.fields, "name", "full_name");
-              const firstName = getFieldValue(s.fields, "first_name");
+              // Try explicit first/last fields first, then fall back to combined name
+              const firstName =
+                getFieldValue(s.fields, "first_name") ||
+                getFieldValue(s.fields, "name", "full_name");
               const lastName = getFieldValue(s.fields, "last_name");
-              const displayName =
-                name ||
-                (firstName || lastName
-                  ? [firstName, lastName].filter(Boolean).join(" ")
-                  : null);
               const email = getFieldValue(s.fields, "email");
               let pageLabel = "—";
               try {
@@ -256,7 +254,7 @@ export default function FormSubmissionsClient({ submissions }) {
                 <TableRow
                   key={s._id}
                   className="cursor-pointer hover:bg-muted/50"
-                  onClick={() => setSelected(s)}
+                  onClick={() => router.push(`/internal/form-submissions/${s._id}`)}
                 >
                   <TableCell className="text-sm text-muted-foreground whitespace-nowrap">
                     {formatCT(s.submitted_at)}
@@ -265,7 +263,10 @@ export default function FormSubmissionsClient({ submissions }) {
                     <Badge variant="secondary">{s.form_title || "—"}</Badge>
                   </TableCell>
                   <TableCell className="hidden md:table-cell text-sm">
-                    {displayName || "—"}
+                    {firstName || "—"}
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell text-sm">
+                    {lastName || "—"}
                   </TableCell>
                   <TableCell className="hidden md:table-cell text-sm">
                     {email || "—"}
@@ -285,60 +286,6 @@ export default function FormSubmissionsClient({ submissions }) {
         </Table>
       </div>
 
-      {/* Detail Modal */}
-      {selected && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelected(null)}
-        >
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/50" />
-
-          {/* Card */}
-          <div
-            className="relative z-10 w-full max-w-lg max-h-[85vh] overflow-y-auto rounded-xl border border-gray-200 bg-white shadow-xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal header */}
-            <div className="flex items-start justify-between p-6 pb-4 border-b border-gray-100">
-              <div>
-                <h2 className="text-lg font-semibold text-gray-900">
-                  {selected.form_title || "Submission"}
-                </h2>
-                <p className="text-sm text-gray-500 mt-0.5">
-                  {formatCT(selected.submitted_at)}
-                </p>
-              </div>
-              <button
-                onClick={() => setSelected(null)}
-                className="rounded-md p-1.5 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors ml-4 shrink-0"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            {/* Meta */}
-            <div className="px-6 py-3 bg-gray-50 border-b border-gray-100 text-sm text-gray-600">
-              <span className="font-medium text-gray-800">Page: </span>
-              {selected.page_url || "—"}
-            </div>
-
-            {/* Fields */}
-            <div className="divide-y divide-gray-100">
-              {selected.fields?.map((f) => (
-                <div key={f.name} className="flex gap-4 px-6 py-3.5">
-                  <span className="w-36 shrink-0 text-sm font-medium text-gray-500">
-                    {humanize(f.name)}
-                  </span>
-                  <span className="text-sm text-gray-900 break-all">
-                    {f.value || "—"}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
