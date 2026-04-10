@@ -32,8 +32,15 @@ export default function DraftModeContent() {
       // Scroll-to-block: when the editor focuses a block path, scroll the
       // matching block wrapper into view.
       const handleEditorMessage = (event) => {
-        if (event.data?.type !== "presentation/focus") return;
-        const path = event.data?.data?.path;
+        const msg = event.data;
+        if (
+          !msg ||
+          msg.domain !== "sanity/channels" ||
+          msg.from !== "presentation" ||
+          msg.type !== "presentation/focus"
+        ) return;
+
+        const path = msg.data?.path;
         if (!path) return;
 
         // Path looks like: page_builder[_key=="abc123"].title
