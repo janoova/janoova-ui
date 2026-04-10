@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 export default function DraftModeContent() {
   const pathname = usePathname();
-  const [inIframe, setInIframe] = useState(null); // null = unknown (SSR), then resolved
+  const [inIframe, setInIframe] = useState(null); // null = resolving
 
   useEffect(() => {
     setInIframe(window.self !== window.top);
@@ -15,9 +15,6 @@ export default function DraftModeContent() {
   useEffect(() => {
     document.documentElement.classList.add("draft-mode");
 
-    // In the Sanity Presentation tool, prevent link navigation so the editor
-    // overlays can intercept clicks correctly. Also listen for block focus
-    // messages so we can scroll the selected block into view.
     if (inIframe) {
       const preventAnchorNavigation = (event) => {
         const target = event.target.closest("a");
@@ -35,14 +32,11 @@ export default function DraftModeContent() {
       // Scroll-to-block: when the editor focuses a block path, scroll the
       // matching block wrapper into view.
       const handleEditorMessage = (event) => {
-        const type = event.data?.type;
-        // Sanity sends "presentation/focus" with data.path when a field is selected
-        if (type !== "presentation/focus") return;
+        if (event.data?.type !== "presentation/focus") return;
         const path = event.data?.data?.path;
         if (!path) return;
 
         // Path looks like: page_builder[_key=="abc123"].title
-        // Extract the _key value to find the matching wrapper div.
         const keyMatch = path.match(/_key=="([^"]+)"/);
         if (!keyMatch) return;
 
@@ -67,15 +61,13 @@ export default function DraftModeContent() {
     };
   }, [inIframe]);
 
-  // Still resolving — render nothing visible yet so there's no flash
+  // Still resolving — render VisualEditing immediately so overlays work
   if (inIframe === null) return <VisualEditing />;
 
-  // Inside Sanity's Presentation tool iframe — just the editing overlay, no UI chrome
-  if (inIframe) {
-    return <VisualEditing />;
-  }
+  // Inside Sanity's Presentation tool iframe — editing overlay only, no UI chrome
+  if (inIframe) return <VisualEditing />;
 
-  // Outside the editor (shared preview link) — show a top preview bar
+  // Outside the editor — show a bottom preview bar
   const exitHref = `/api/disable-draft?returnTo=${encodeURIComponent(pathname)}`;
 
   return (
@@ -83,7 +75,7 @@ export default function DraftModeContent() {
       <div
         style={{
           position: "fixed",
-          top: 0,
+          bottom: 0,
           left: 0,
           right: 0,
           zIndex: 9999,
@@ -95,7 +87,7 @@ export default function DraftModeContent() {
           color: "#fff",
           fontSize: "0.8125rem",
           fontWeight: 500,
-          boxShadow: "0 1px 3px rgba(0,0,0,0.3)",
+          boxShadow: "0 -1px 3px rgba(0,0,0,0.3)",
         }}
       >
         <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
@@ -134,8 +126,6 @@ export default function DraftModeContent() {
           Exit preview
         </a>
       </div>
-      {/* Spacer so page content isn't hidden behind the bar */}
-      <div style={{ height: 37 }} />
     </>
   );
 }
