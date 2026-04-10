@@ -2,6 +2,7 @@ import PageBuilder from "@/components/wrappers/PageBuilder";
 import { getMetaData } from "@/lib/seo";
 import { getPageBySlug, getAllPageSlugs } from "@/sanity/utils/queries";
 import { notFound } from "next/navigation";
+import { draftMode } from "next/headers";
 
 export async function generateStaticParams() {
   const pages = await getAllPageSlugs();
@@ -11,6 +12,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }) {
+  const { isEnabled: isPreview } = await draftMode();
   const { slug } = await params;
   const slugPath = slug.join("/");
   const data = await getPageBySlug(slugPath);
@@ -23,9 +25,15 @@ export default async function Page({ params }) {
       {data?.scoped_css?.code && (
         <style dangerouslySetInnerHTML={{ __html: data.scoped_css.code }} />
       )}
-      {data?.page_builder?.map((elem, index) => {
-        return <PageBuilder key={elem._key} data={elem} index={index} />;
-      })}
+      {data?.page_builder?.map((elem, index) => (
+        <PageBuilder
+          key={elem._key}
+          data={elem}
+          index={index}
+          docId={isPreview ? data._id : undefined}
+          docType={isPreview ? data._type : undefined}
+        />
+      ))}
     </>
   );
 }

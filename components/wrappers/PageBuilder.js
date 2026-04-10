@@ -11,6 +11,7 @@ import * as AllFeeds from "../blocks/feed";
 import * as AllModals from "../blocks/modal";
 import * as AllTeams from "../blocks/team";
 import { getCleanValue } from "@/lib/helpers";
+import { createDataAttribute } from "next-sanity";
 
 const categories = {
   hero: AllHeroes,
@@ -36,7 +37,7 @@ const BlockNotFound = ({ _type, block_category }) => {
   );
 };
 
-const PageBuilder = ({ data, index }) => {
+const PageBuilder = ({ data, index, docId, docType }) => {
   // Add safety checks
   if (!data || !data._type || !data.block_category) {
     console.warn("PageBuilder: Missing required data", data);
@@ -81,11 +82,25 @@ const PageBuilder = ({ data, index }) => {
     return <BlockNotFound _type={_type} block_category={block_category} />;
   }
 
-  return (
-    <div data-sanity-block-key={data._key}>
-      <Component data={data} index={index} />
-    </div>
-  );
+  // In preview mode, wrap with data-sanity so VisualEditing can identify this
+  // block as an array item — enables block-level overlays and minimap drag & drop.
+  // On published pages (no docId), render the component directly with no wrapper.
+  if (docId && docType && data._key) {
+    const sanityAttr = createDataAttribute({
+      baseUrl: "/studio",
+      type: docType,
+      id: docId,
+      path: `page_builder[_key=="${data._key}"]`,
+    }).toString();
+
+    return (
+      <div data-sanity={sanityAttr}>
+        <Component data={data} index={index} />
+      </div>
+    );
+  }
+
+  return <Component data={data} index={index} />;
 };
 
 export default PageBuilder;
