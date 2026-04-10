@@ -81,7 +81,11 @@ const PageBuilder = ({ data, index }) => {
     return <BlockNotFound _type={_type} block_category={block_category} />;
   }
 
-  return <Component data={data} index={index} />;
+  return (
+    <div data-sanity-block-key={data._key}>
+      <Component data={data} index={index} />
+    </div>
+  );
 };
 
 export default PageBuilder;
