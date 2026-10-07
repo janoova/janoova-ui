@@ -7,6 +7,7 @@ import { stegaClean } from "@sanity/client/stega";
 import { Phone } from "lucide-react";
 import { getStarterConfig, STARTER_LOGO_SVG } from "@/lib/starterConfig";
 import ForceRefreshStarter from "@/components/wrappers/ForceRefreshStarter";
+import HeaderVariant02 from "./HeaderVariant02";
 
 const updateActiveStatusByKey = (data, uid) => {
   if (!data || !Array.isArray(data)) return [];
@@ -199,6 +200,19 @@ const HeaderVariantStarter = () => {
   return (
     <>
       <ForceRefreshStarter basePath={basePath} />
+      {starterConfig.headerVariant === "variant02" ? (
+        <HeaderVariant02
+          navigationSchema={menu}
+          homeHref={basePath}
+          logoOverride={<STARTER_LOGO_SVG starterSlug={starterName} />}
+          siteSettings={{
+            header_button_title: headerButtons?.primary?.title,
+            header_button_destination: headerButtons?.primary?.destination,
+            header_click_to_call_title: headerButtons?.clickToCall?.title,
+            header_click_to_call_destination: headerButtons?.clickToCall?.destination,
+          }}
+        />
+      ) : (<>
       <header className="b__header__variant01 b__header__variant01--glass b__header__variant01--sticky">
         <div className="container">
           <Button
@@ -329,6 +343,7 @@ const HeaderVariantStarter = () => {
         }}
         className={`b__header__variant01__navigation-board__tint ${menuOpen ? `b__header__variant01__navigation-board__tint--active` : ``}`}
       ></div>
+      </>)}
     </>
   );
 };

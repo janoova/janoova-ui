@@ -70,7 +70,7 @@
       "scoped_css": {
         "_type": "code",
         "language": "scss",
-        "code": "padding: 40px 0; background-color: var(--t-plumbing-navy); --t-cp-base-white: #fff; --t-inverted-text-color: #fff;\n.b__stats__variant01__row--atf { display: none; }\n.container { margin-top: 0 !important; }\n.c__stats-card .c__heading { font-size: clamp(2rem, 4vw, 3.5rem); }\n.c__stats-card { color: #d7e8f5; }"
+        "code": "padding: 40px 0; background-color: #102c46; --t-cp-base-white: #fff; --t-inverted-text-color: #fff;\n.b__stats__variant01__row--atf { display: none; }\n.container { margin-top: 0 !important; }\n.c__stats-card .c__heading { font-size: clamp(2rem, 4vw, 3.5rem); }\n.c__stats-card { color: #d7e8f5; }"
       }
     },
     {
@@ -413,7 +413,7 @@
       "scoped_css": {
         "_type": "code",
         "language": "scss",
-        "code": "padding: 80px 0; background-color: var(--t-cp-base-white);\n.b__cta__variant01__wrapper { background-color: var(--t-plumbing-navy); border-radius: 24px; }"
+        "code": "padding: 80px 0; background-color: var(--t-cp-base-white);\n.b__cta__variant01__wrapper { background-color: #102c46; border-radius: 24px; }"
       }
     }
   ]

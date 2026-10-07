@@ -137,6 +137,31 @@ const WireframingTheme = css`
 
 // Starter Theme Overrides — default (light) and dark per starter
 const starterThemes = {
+  manufacturing: {
+    default: css`
+      :root {
+        --t-primary-branding-color: #a64019;
+        --t-primary-branding-hover-color: #843012;
+        --t-secondary-branding-color: #243f50;
+        --t-secondary-branding-hover-color: #182c39;
+        --t-border-color: #e1e3e4;
+        --t-light-background-color: #f5f5f2;
+        --t-font-family-heading: var(--t-font-family--outfit), var(--t-font-family-system);
+        --t-font-family-body: var(--t-font-family--outfit), var(--t-font-family-system);
+        --t-font-weight-heading: 700;
+      }
+    `,
+    dark: css`
+      :root.dark {
+        --t-primary-branding-color: #a64019;
+        --t-primary-branding-hover-color: #843012;
+        --t-secondary-branding-color: #243f50;
+        --t-secondary-branding-hover-color: #182c39;
+        --t-border-color: #293b48;
+        --t-light-background-color: #142632;
+      }
+    `,
+  },
   plumbing: {
     default: css`
       :root {
@@ -144,19 +169,11 @@ const starterThemes = {
         --t-primary-branding-hover-color: #03417e;
         --t-secondary-branding-color: #b9470b;
         --t-secondary-branding-hover-color: #963707;
-        --t-heading-color: #102c46;
-        --t-body-color: #425a6e;
         --t-border-color: #dbe6ee;
         --t-light-background-color: #f0f7fc;
-        --t-font-family-heading: var(--t-font-family--inter), var(--t-font-family-system);
-        --t-font-family-body: var(--t-font-family--inter), var(--t-font-family-system);
+        --t-font-family-heading: var(--t-font-family--outfit), var(--t-font-family-system);
+        --t-font-family-body: var(--t-font-family--outfit), var(--t-font-family-system);
         --t-font-weight-heading: 800;
-        --t-heading-letter-spacing: -0.035em;
-        --t-button-border-radius: 8px;
-        --t-global-card-border-radius: 20px;
-        --t-global-image-border-radius: 24px;
-        --t-plumbing-navy: #102c46;
-        --t-plumbing-accent: #ffab66;
       }
     `,
     dark: css`
@@ -165,8 +182,6 @@ const starterThemes = {
         --t-primary-branding-hover-color: #03417e;
         --t-secondary-branding-color: #b9470b;
         --t-secondary-branding-hover-color: #963707;
-        --t-heading-color: #f0f7fc;
-        --t-body-color: #c4d6e5;
         --t-border-color: #28445c;
         --t-light-background-color: #122b40;
       }
@@ -252,6 +267,9 @@ const starterThemes = {
   },
   // Add more starter themes here...
 };
+
+// Reuse the plumbing branding for the photo-based starter.
+starterThemes["plumbing-2"] = starterThemes.plumbing;
 
 // Get the active starter slug from the URL pathname
 const getActiveStarterSlug = () => {

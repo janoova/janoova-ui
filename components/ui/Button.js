@@ -210,6 +210,35 @@ const Component = styled.div`
       }
     }
   }
+
+  .dark & {
+    .c__button {
+      &--secondary {
+        border-color: var(--t-inverted-text-color);
+        &:hover {
+          border-color: var(--t-inverted-text-color);
+        }
+      }
+      &--ghost-primary,
+      &--ghost-secondary {
+        color: var(--t-inverted-text-color);
+        border-color: var(--t-inverted-text-color);
+        &:hover {
+          background: var(--t-inverted-text-color);
+          color: var(--t-cp-base-white);
+          border-color: var(--t-inverted-text-color);
+        }
+      }
+      &--inverted {
+        background: var(--t-inverted-text-color);
+        border-color: var(--t-inverted-text-color);
+        &:hover {
+          background: #e2e8f0;
+          border-color: #e2e8f0;
+        }
+      }
+    }
+  }
 `;
 
 const Button = ({

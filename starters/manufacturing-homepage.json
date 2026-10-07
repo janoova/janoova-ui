@@ -1,0 +1,474 @@
+{
+  "_type": "page",
+  "title": "ForgeWorks Manufacturing | Manufacturing Starter",
+  "slug": {
+    "_type": "slug",
+    "current": "starters/manufacturing"
+  },
+  "meta_title": "ForgeWorks Manufacturing | Fabrication & Production Support",
+  "meta_description": "A manufacturing company starter with metal fabrication, precision cutting, CNC machining, quality control, and production support.",
+  "seo_no_index": true,
+  "featured_image": {
+    "_type": "image",
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-d9d557128995524605284e7c94551386bb4135b2-1023x681-jpg"
+    },
+    "alt": "Laser cutting a metal sheet in a manufacturing facility"
+  },
+  "page_builder": [
+    {
+      "_type": "HeroVariant03",
+      "_key": "hero",
+      "block_category": "hero",
+      "heading_tag": "h1",
+      "enable_animations": false,
+      "heading_size": "d1",
+      "heading": "Built for precision.<br />Ready for production.",
+      "description": "Custom metal fabrication and manufacturing support.<br />From your first drawing to the finished component.",
+      "description_tag": "p",
+      "description_size": "h5",
+      "align_left": true,
+      "invert_text_color": true,
+      "background_theme": "secondary",
+      "background_image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-d9d557128995524605284e7c94551386bb4135b2-1023x681-jpg"
+        },
+        "alt": "Industrial laser cutting a metal sheet with sparks"
+      },
+      "enable_background_tint": true,
+      "button_title": "Request a Quote",
+      "button_destination": "#bounded-section-id-contact",
+      "button_theme": "inverted",
+      "button_two_title": "Explore Our Capabilities",
+      "button_two_destination": "#bounded-section-id-capabilities",
+      "button_two_theme": "primary",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 160px 0 112px;\nbackground-color: var(--t-secondary-branding-color);"
+      }
+    },
+    {
+      "_type": "FeatureVariant02",
+      "_key": "capabilities",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "label": "OUR CAPABILITIES",
+      "label_heading_tag": "span",
+      "heading": "The right process for your next project.",
+      "description": "A practical range of manufacturing services, built around your drawings, materials, and production needs.",
+      "card_style": "outlined",
+      "card_columns": "3",
+      "card_heading_tag": "h3",
+      "justify_content": "start",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "cutting",
+          "heading": "Precision Cutting",
+          "description": "Laser-cut profiles, clean edges, and repeatable results for sheet metal components.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2v6M8 2h8M10 8h4l-2 4ZM3 18h18M12 14v2m-5-4-2 2m12-2 2 2\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "machining",
+          "heading": "CNC Machining",
+          "description": "Machined components made to your drawings, with attention to fit, finish, and consistency.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M8 3v6h8V3M12 9v4M8 17h8\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "fabrication",
+          "heading": "Metal Fabrication",
+          "description": "Cutting, forming, and assembly for brackets, frames, and custom metal structures.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 5h16v5H9v9H4ZM9 14h11v5H9\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "welding",
+          "heading": "Welding & Assembly",
+          "description": "Bring individual components together with project-specific welding and assembly services.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m4 4 6 6-4 4-4-4ZM10 10l4 4m-1 3 2 2m2-6 2 2M17 4l3 3M4 17l3 3\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "finishing",
+          "heading": "Finishing & Preparation",
+          "description": "Deburring, surface preparation, and coordinated finishing to get parts ready for use.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m14 3 7 7-4 4-7-7ZM10 7l-5 5a5 5 0 0 0 7 7l5-5M4 20l2-2\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "production",
+          "heading": "Production Support",
+          "description": "Prototype builds and repeat orders backed by clear communication and practical planning.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 21V9l6 3V8l6 3V5h6v16ZM7 17h1m4 0h1m4 0h1\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "FeatureVariant01",
+      "_key": "fabrication",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "label": "CRAFT MEETS CAPABILITY",
+      "label_heading_tag": "span",
+      "heading": "Built by people<br />who know the details.",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "fab1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "fab1text",
+              "text": "At ForgeWorks, good manufacturing starts with a clear understanding of the job. We review your drawings, discuss the materials and finishes, and identify the details that matter before production begins.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "fab2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "fab2text",
+              "text": "From custom metalwork to repeat components, our team pairs hands-on experience with careful planning. You get practical answers, responsive communication, and work shaped around your requirements.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-a5407053797af3fd2f6f27d243bc2dd79e75fb93-1023x683-jpg"
+        },
+        "alt": "Fabrication worker cutting a metal pipe with an electric grinder"
+      },
+      "align_items_center": true,
+      "invert_order": false,
+      "button_title": "Discuss Your Requirements",
+      "button_destination": "#bounded-section-id-contact",
+      "button_theme": "primary"
+    },
+    {
+      "_type": "FeatureVariant01",
+      "_key": "quality",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "label": "QUALITY AT EVERY STAGE",
+      "label_heading_tag": "span",
+      "heading": "Consistency starts<br />before the first cut.",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "quality1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "quality1text",
+              "text": "We agree on the dimensions, tolerances, and inspection requirements that matter to your project. Checks are built into the workflow, helping identify issues while there is still time to resolve them.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "quality2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "quality2text",
+              "text": "Material requirements, drawing revisions, and production milestones are discussed upfront. From setup to final inspection, we focus on delivering components that match the agreed specification.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-2e8d39bcfbe3b95bf2acab5bd7c8bc2f51e131f4-1023x682-jpg"
+        },
+        "alt": "Manufacturing worker operating a machine control panel"
+      },
+      "align_items_center": true,
+      "invert_order": true,
+      "button_title": "Talk About Your Project",
+      "button_destination": "#bounded-section-id-contact",
+      "button_theme": "primary",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "ContentVariant03",
+      "_key": "industries",
+      "block_category": "content",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Made for the industries that keep things moving.",
+      "description": "Flexible manufacturing support for a wide range of applications.",
+      "card_columns": "3",
+      "card_theme": "primary",
+      "card_heading_tag": "h3",
+      "justify_content": "start",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "equipment",
+          "heading": "Industrial Equipment",
+          "description": "Custom brackets, guards, frames, and components for machinery and production environments."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "buildings",
+          "heading": "Construction & Infrastructure",
+          "description": "Practical metalwork and fabricated assemblies for building and infrastructure projects."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "products",
+          "heading": "Product Manufacturers",
+          "description": "Prototype components and repeat production support for teams bringing products to market."
+        }
+      ]
+    },
+    {
+      "_type": "FeatureVariant03",
+      "_key": "process",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "A clear path from drawing to delivery.",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "processcopy",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "processcopytext",
+              "text": "Every project has different priorities. We work with you to understand the application, agree on the scope, and plan the next steps. Expect clear communication from the first conversation through the final handoff.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "align_items_center": true,
+      "card_heading_tag": "h3",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "review",
+          "heading": "01. Share your requirements",
+          "description": "Send your drawings, quantities, material requirements, and target timeline. We’ll review the details together.",
+          "icon_type": "svg",
+          "icon_color": "var(--t-primary-branding-color)",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 8h6M9 12h6M9 16h3\"/></svg>"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "plan",
+          "heading": "02. Agree on the plan",
+          "description": "We clarify the specification, provide a quote, and confirm the production approach before work begins.",
+          "icon_type": "svg",
+          "icon_color": "var(--t-primary-branding-color)",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m5 12 4 4L19 6\"/><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/></svg>"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "deliver",
+          "heading": "03. Build, check, and deliver",
+          "description": "Production follows the agreed requirements, with inspection and delivery details confirmed along the way.",
+          "icon_type": "svg",
+          "icon_color": "var(--t-primary-branding-color)",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 7h11v12H3ZM14 11h4l3 4v4h-7\"/><circle cx=\"7\" cy=\"19\" r=\"2\"/><circle cx=\"18\" cy=\"19\" r=\"2\"/></svg>"
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "FaqVariant01",
+      "_key": "faq",
+      "block_category": "faq",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Before we get started.",
+      "description": "A few answers to help you plan your next manufacturing project.",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "quote",
+          "heading": "What do you need to prepare a quote?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "quoteanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "quoteanswertext",
+                  "text": "Share your drawings or specifications, the required quantities, material and finish preferences, and your target delivery date. If some details are still being developed, we can discuss what is needed next.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "prototype",
+          "heading": "Can you help with prototypes and smaller runs?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "prototypeanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "prototypeanswertext",
+                  "text": "Yes. We can discuss one-off components, prototypes, and repeat production. The best approach depends on the design, process, and quantity.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "materials",
+          "heading": "Which materials can you work with?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "materialsanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "materialsanswertext",
+                  "text": "Our sample capabilities include steel, stainless steel, and aluminum. Tell us the material grade and application so we can confirm the right manufacturing approach.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "leadtime",
+          "heading": "How do you confirm production timelines?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "leadtimeanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "leadtimeanswertext",
+                  "text": "Lead times depend on the scope, material availability, and production schedule. We discuss your target date during quoting and agree on a timeline before the project starts.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "inspection",
+          "heading": "Can you work to specific inspection requirements?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "inspectionanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "inspectionanswertext",
+                  "text": "We review your tolerances, inspection needs, and documentation requirements with the quote. Any project-specific acceptance criteria are agreed before production begins.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "CtaVariant01",
+      "_key": "contact",
+      "block_category": "cta",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Bring us your next manufacturing challenge.",
+      "description": "Share your drawings, quantities, and timeline.<br />Let’s turn the requirements into a practical production plan.",
+      "description_tag": "p",
+      "theme": "secondary",
+      "button_title": "Send Your Project Details",
+      "button_destination": "mailto:quotes@forgeworks.example",
+      "button_theme": "inverted",
+      "button_two_title": "Call (312) 555-0162",
+      "button_two_destination": "tel:+13125550162",
+      "button_two_theme": "primary",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    }
+  ]
+}

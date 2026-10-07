@@ -250,7 +250,7 @@ const MobileNavItem = ({ elem, depth = 1, navigationState, handleNavigationState
 // ─────────────────────────────────────────────────────────────
 // Header
 // ─────────────────────────────────────────────────────────────
-const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
+const HeaderVariant02 = ({ navigationSchema, siteSettings, logoOverride, homeHref = "/" }) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(65);
@@ -311,7 +311,7 @@ const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [subMenusToggledByTab]);
 
-  const logo = siteSettings?.logo?.asset ? (
+  const logo = logoOverride || (siteSettings?.logo?.asset ? (
     <Image
       className="h-[44px] w-auto object-contain"
       width={500}
@@ -324,7 +324,7 @@ const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
     <span className="font-bold text-xl u__font-family-heading tracking-tight u__heading-color">
       {organization || ""}
     </span>
-  );
+  ));
 
   return (
     <>
@@ -363,7 +363,7 @@ const HeaderVariant02 = ({ navigationSchema, siteSettings }) => {
           )}
         >
           {/* Logo */}
-          <Link href="/" aria-label="Go to homepage" className="shrink-0">
+          <Link href={homeHref} aria-label="Go to homepage" className="shrink-0 u__text-decoration-none u__inherited-anchor">
             {logo}
           </Link>
 

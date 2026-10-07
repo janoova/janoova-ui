@@ -1,0 +1,404 @@
+{
+  "_type": "page",
+  "title": "ClearFlow Plumbing | Photo Starter",
+  "slug": {
+    "_type": "slug",
+    "current": "starters/plumbing-2"
+  },
+  "meta_title": "ClearFlow Plumbing | Repairs & Bathroom Upgrades",
+  "meta_description": "Friendly local plumbing service for leaks, drains, water heaters, fixture repairs, and bathroom upgrades. Contact ClearFlow to arrange a visit.",
+  "seo_no_index": true,
+  "featured_image": {
+    "_type": "image",
+    "asset": {
+      "_type": "reference",
+      "_ref": "image-19fc6461537281960e4e068954422c032c8b9dc9-1023x807-jpg"
+    },
+    "alt": "Plumber working on bathroom sink pipes"
+  },
+  "page_builder": [
+    {
+      "_type": "HeroVariant02",
+      "_key": "hero",
+      "block_category": "hero",
+      "heading_tag": "h1",
+      "enable_animations": false,
+      "label": "LOCAL PLUMBERS. LASTING SOLUTIONS.",
+      "heading": "A reliable plumber.<br />A home that runs smoothly.",
+      "content": "From everyday leaks to bathroom upgrades, ClearFlow brings friendly service, clear pricing, and careful workmanship to your doorstep.",
+      "align_items_center": true,
+      "enable_blobs": false,
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-19fc6461537281960e4e068954422c032c8b9dc9-1023x807-jpg"
+        },
+        "alt": "Plumber working on the pipes beneath a bathroom sink"
+      },
+      "button_title": "Call Your Local Plumber",
+      "button_destination": "tel:+13125550148",
+      "button_theme": "primary",
+      "button_two_title": "Explore Our Services",
+      "button_two_destination": "#bounded-section-id-services",
+      "button_two_theme": "ghost-primary",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 160px 0 64px;\nbackground-color: var(--t-cp-base-white);"
+      }
+    },
+    {
+      "_type": "FeatureVariant02",
+      "_key": "services",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "label": "WHAT WE DO",
+      "label_heading_tag": "span",
+      "heading": "Practical help for every plumbing problem.",
+      "description": "Small repairs, bigger projects, and everything in between. One local team to keep your home running comfortably.",
+      "card_columns": "3",
+      "card_style": "outlined",
+      "card_heading_tag": "h3",
+      "justify_content": "start",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "leaks",
+          "heading": "Leaks & Pipe Repairs",
+          "description": "From a dripping tap to a hidden pipe leak, we find the problem and put it right.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3S5 11 5 15a7 7 0 0 0 14 0c0-4-7-12-7-12Z\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "drains",
+          "heading": "Drains & Sewer Lines",
+          "description": "Clear stubborn blockages and get your sinks, showers, and drains flowing freely again.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4v7a6 6 0 0 0 6 6h4a2 2 0 0 1 2 2v2M8 4v7a2 2 0 0 0 2 2h4a6 6 0 0 1 6 6v2M2 4h8M14 21h8\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "hot-water",
+          "heading": "Water Heaters",
+          "description": "Repair, replacement, and routine care for dependable hot water every day.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"6\" y=\"4\" width=\"12\" height=\"17\" rx=\"3\"/><path d=\"M9 4V2m6 2V2M10 9h4m-2 3-2 3h4l-2 3\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "fixtures",
+          "heading": "Faucets & Toilets",
+          "description": "Fix that running toilet or upgrade tired fixtures with a tidy, professional installation.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 14h16M6 14v4a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3v-4M10 14V6a3 3 0 0 1 6 0v2M14 8h4\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "bathrooms",
+          "heading": "Bathroom Plumbing",
+          "description": "Bring your bathroom plans to life with plumbing that works as beautifully as it looks.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4ZM5 12V5a2 2 0 0 1 4 0M6 19v2m12-2v2\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "urgent",
+          "heading": "Emergency Support",
+          "description": "An urgent plumbing problem? Call our team for help and the next available visit.",
+          "icon_type": "svg",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg>",
+          "icon_color": "var(--t-primary-branding-color)"
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "FeatureVariant01",
+      "_key": "about",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "label": "WHY CLEARFLOW",
+      "label_heading_tag": "span",
+      "heading": "Careful work.<br />Clear communication.",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "about1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about1text",
+              "text": "Your home deserves more than a quick fix. We take the time to understand the problem, explain the options, and agree on the price before work begins.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "about2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about2text",
+              "text": "Our team treats your space with care, keeps you informed throughout the job, and checks every repair before packing up. Good plumbing service should leave you feeling confident.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-ac1c3cb892d12130dbcca29c822f4a3a16edbbad-1023x682-jpg"
+        },
+        "alt": "Tradesperson cutting a pipe during plumbing work"
+      },
+      "align_items_center": true,
+      "invert_order": false,
+      "button_title": "Talk to Our Team",
+      "button_destination": "tel:+13125550148",
+      "button_theme": "primary"
+    },
+    {
+      "_type": "FeatureVariant01",
+      "_key": "bathroom",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "label": "BATHROOM UPGRADES",
+      "label_heading_tag": "span",
+      "heading": "Better plumbing.<br />A better everyday routine.",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "bath1",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "bath1text",
+              "text": "Planning a refresh? From new taps and toilets to a complete bathroom renovation, we help you choose practical fixtures and install them properly.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "bath2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "bath2text",
+              "text": "We work around your plans and your home, coordinating the plumbing details so you can enjoy a comfortable, functional space for years to come.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "image": {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "image-460350a3d2ca4cd3723f3a45974adbccdd5bfd6c-1023x682-jpg"
+        },
+        "alt": "Finished bathroom with a sink, toilet, and tiled bathtub"
+      },
+      "align_items_center": true,
+      "invert_order": true,
+      "button_title": "Discuss Your Project",
+      "button_destination": "tel:+13125550148",
+      "button_theme": "primary",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "ContentVariant03",
+      "_key": "process",
+      "block_category": "content",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Getting help is simple.",
+      "description": "A straightforward process, from your first call to the final check.",
+      "card_columns": "3",
+      "card_theme": "primary",
+      "card_heading_tag": "h3",
+      "justify_content": "start",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "call",
+          "heading": "01. Tell us what’s happening",
+          "description": "Give us a call, describe the problem, and we’ll arrange a convenient visit."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "quote",
+          "heading": "02. Agree on the solution",
+          "description": "We inspect the issue, explain your options, and provide a price before starting."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "finish",
+          "heading": "03. Get back to your day",
+          "description": "We complete the work, test the repair, and leave your space clean and tidy."
+        }
+      ]
+    },
+    {
+      "_type": "TestimonialVariant01",
+      "_key": "review",
+      "block_category": "testimonial",
+      "enable_animations": false,
+      "heading": "“The team explained the repair clearly, arrived when they said they would, and left everything spotless. Exactly the kind of plumber you want to have on speed dial.”",
+      "person_name": "Alex M.",
+      "person_title": "Local homeowner · Sample testimonial",
+      "use_global_testimonials": false,
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "FaqVariant01",
+      "_key": "faq",
+      "block_category": "faq",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "A few things you might be wondering.",
+      "description": "Here’s what to expect when you book with ClearFlow.",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "price",
+          "heading": "Do you provide upfront pricing?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "priceanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "priceanswertext",
+                  "text": "Yes. We assess the problem and explain the proposed work and price before you approve the repair. Any visit or diagnostic charge is explained when you book.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "emergency",
+          "heading": "Can I call about an urgent problem?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "emergencyanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "emergencyanswertext",
+                  "text": "Yes. Call (312) 555-0148 to discuss what’s happening. We’ll explain our availability and help arrange the next suitable visit.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "area",
+          "heading": "Which areas do you serve?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "areaanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "areaanswertext",
+                  "text": "We serve Chicago, Evanston, Oak Park, Skokie, and nearby neighborhoods. Call us if you’d like to check whether we cover your address.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "renovation",
+          "heading": "Do you work on bathroom renovations?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "renovationanswer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "renovationanswertext",
+                  "text": "Yes. We can help with fixture replacements and the plumbing work involved in a bathroom renovation. Tell us about your project and we’ll discuss the next steps.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_type": "CtaVariant01",
+      "_key": "contact",
+      "block_category": "cta",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Your next plumbing fix starts here.",
+      "description": "Tell us what you need. We’ll help you find a practical solution.<br />Call (312) 555-0148 or email hello@clearflow.example.",
+      "description_tag": "p",
+      "theme": "primary",
+      "button_title": "Call (312) 555-0148",
+      "button_destination": "tel:+13125550148",
+      "button_theme": "inverted",
+      "button_two_title": "Email Our Team",
+      "button_two_destination": "mailto:hello@clearflow.example",
+      "button_two_theme": "inverted",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 64px 0;\nbackground-color: var(--t-light-background-color);"
+      }
+    }
+  ]
+}
