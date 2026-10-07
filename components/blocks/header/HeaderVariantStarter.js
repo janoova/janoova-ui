@@ -214,7 +214,7 @@ const HeaderVariantStarter = () => {
             >
               <div className="b__header__variant01__logo-wrapper u__cursor-pointer">
                 <div className="b__header__variant01__logo">
-                  <STARTER_LOGO_SVG />
+                  <STARTER_LOGO_SVG starterSlug={starterName} />
                 </div>
               </div>
             </Link>

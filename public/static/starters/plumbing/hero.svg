@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="900" viewBox="0 0 800 900" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse"><stop stop-color="#e3f4fc"/><stop offset="1" stop-color="#b7daed"/></linearGradient>
+    <linearGradient id="pipe" x1="230" y1="290" x2="530" y2="670" gradientUnits="userSpaceOnUse"><stop stop-color="#83bad8"/><stop offset=".5" stop-color="#eaf7ff"/><stop offset="1" stop-color="#7babca"/></linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse"><path d="M56 0H0V56" stroke="#fff" stroke-opacity=".35" stroke-width="1"/></pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#18394f" flood-opacity=".12"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h800v900H0z"/><path fill="url(#grid)" d="M0 0h800v900H0z"/>
+  <circle cx="407" cy="454" r="267" fill="#fff" fill-opacity=".35"/><circle cx="407" cy="454" r="219" stroke="#fff" stroke-width="2" stroke-dasharray="6 12"/>
+  <g filter="url(#shadow)">
+    <rect x="144" y="271" width="514" height="401" rx="32" fill="#fff"/>
+    <rect x="144" y="271" width="514" height="77" rx="32" fill="#102c46"/><path d="M144 309h514v39H144z" fill="#102c46"/>
+    <circle cx="180" cy="309" r="7" fill="#ffab66"/><circle cx="205" cy="309" r="7" fill="#5f9dc8"/><circle cx="230" cy="309" r="7" fill="#5f9dc8"/>
+    <path d="M261 385v73c0 40 30 68 69 68h142c31 0 51 22 51 52v46" stroke="#416d8d" stroke-width="55"/>
+    <path d="M261 385v73c0 40 30 68 69 68h142c31 0 51 22 51 52v46" stroke="url(#pipe)" stroke-width="43"/>
+    <rect x="226" y="378" width="71" height="23" rx="7" fill="#0756a3"/><rect x="488" y="606" width="71" height="23" rx="7" fill="#0756a3"/>
+    <rect x="371" y="493" width="68" height="66" rx="12" fill="#0756a3"/>
+    <path d="M405 497v-51" stroke="#102c46" stroke-width="12"/><rect x="358" y="426" width="95" height="21" rx="10.5" fill="#b9470b"/>
+    <path d="M584 384s-27 31-27 45a27 27 0 0 0 54 0c0-14-27-45-27-45Z" fill="#0756a3"/>
+    <path d="m572 429 9 9 15-19" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g filter="url(#shadow)"><rect x="98" y="621" width="258" height="98" rx="18" fill="#102c46"/><circle cx="146" cy="670" r="24" fill="#ffab66"/><path d="m135 670 8 8 15-16" stroke="#102c46" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><text x="186" y="665" fill="#fff" font-family="Arial,sans-serif" font-size="17" font-weight="700">FIXED RIGHT.</text><text x="186" y="688" fill="#bdd6e8" font-family="Arial,sans-serif" font-size="13">Rest easy. We’ve got it.</text></g>
+  <g filter="url(#shadow)"><rect x="508" y="222" width="197" height="92" rx="18" fill="#fff"/><text x="535" y="257" fill="#0756a3" font-family="Arial,sans-serif" font-size="22" font-weight="700">24/7</text><text x="535" y="284" fill="#425a6e" font-family="Arial,sans-serif" font-size="14">Emergency support</text></g>
+  <path d="M97 426v30M82 441h30M693 557v30M678 572h30" stroke="#0756a3" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+</svg>

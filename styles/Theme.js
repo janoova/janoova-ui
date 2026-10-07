@@ -137,6 +137,41 @@ const WireframingTheme = css`
 
 // Starter Theme Overrides — default (light) and dark per starter
 const starterThemes = {
+  plumbing: {
+    default: css`
+      :root {
+        --t-primary-branding-color: #0756a3;
+        --t-primary-branding-hover-color: #03417e;
+        --t-secondary-branding-color: #b9470b;
+        --t-secondary-branding-hover-color: #963707;
+        --t-heading-color: #102c46;
+        --t-body-color: #425a6e;
+        --t-border-color: #dbe6ee;
+        --t-light-background-color: #f0f7fc;
+        --t-font-family-heading: var(--t-font-family--inter), var(--t-font-family-system);
+        --t-font-family-body: var(--t-font-family--inter), var(--t-font-family-system);
+        --t-font-weight-heading: 800;
+        --t-heading-letter-spacing: -0.035em;
+        --t-button-border-radius: 8px;
+        --t-global-card-border-radius: 20px;
+        --t-global-image-border-radius: 24px;
+        --t-plumbing-navy: #102c46;
+        --t-plumbing-accent: #ffab66;
+      }
+    `,
+    dark: css`
+      :root.dark {
+        --t-primary-branding-color: #0756a3;
+        --t-primary-branding-hover-color: #03417e;
+        --t-secondary-branding-color: #b9470b;
+        --t-secondary-branding-hover-color: #963707;
+        --t-heading-color: #f0f7fc;
+        --t-body-color: #c4d6e5;
+        --t-border-color: #28445c;
+        --t-light-background-color: #122b40;
+      }
+    `,
+  },
   law: {
     default: css`
       :root {

@@ -1,0 +1,420 @@
+{
+  "_type": "page",
+  "title": "ClearFlow Plumbing | Plumbing Starter",
+  "slug": {
+    "_type": "slug",
+    "current": "starters/plumbing"
+  },
+  "meta_title": "ClearFlow Plumbing | Local Repairs & Emergency Service",
+  "meta_description": "A plumbing company starter featuring emergency plumbing, leak repairs, drain cleaning, and water heater services. Built with Janoova modules.",
+  "seo_no_index": true,
+  "scoped_css": {
+    "_type": "code",
+    "language": "scss",
+    "code": "body.u__starter--plumbing section[id] { scroll-margin-top: 110px; }\nbody.u__starter--plumbing .c__description-wrapper { max-width: 760px; }\nbody.u__starter--plumbing .text-center .c__description-wrapper { margin-inline: auto; }"
+  },
+  "page_builder": [
+    {
+      "_type": "HeroVariant04",
+      "_key": "hero",
+      "block_category": "hero",
+      "heading_tag": "h1",
+      "enable_animations": false,
+      "label": "YOUR NEIGHBORHOOD PLUMBING TEAM",
+      "heading": "Goodbye leaks.<br />Hello peace of mind.",
+      "description": "A dripping tap. A cold shower. A drain that just won’t clear. Whatever’s interrupting your day, ClearFlow gets your home flowing again—with friendly service and straightforward pricing.",
+      "button_title": "Call Your Local Plumber",
+      "button_destination": "tel:+13125550148",
+      "button_theme": "secondary",
+      "button_two_title": "Explore Our Services",
+      "button_two_destination": "#bounded-section-id-services",
+      "button_two_theme": "primary",
+      "enable_image_shape": false,
+      "enable_blobs": false,
+      "enable_background_pattern": false,
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 0; background-color: var(--t-light-background-color);\n.b__hero__variant04__content-wrapper { padding: 140px 20px 64px; }\n.b__hero__variant04__col--image { background: #dceef8 url('/static/starters/plumbing/hero.svg') center / cover no-repeat; min-height: 380px; }\n.b__hero__variant04__content-wrapper::after { content: 'Local people. Clear answers. Quality repairs.'; display: block; margin-top: 28px; color: var(--t-body-color); font-size: 14px; }\n@media (min-width: 992px) { .b__hero__variant04__content-wrapper { padding: 180px 24px 100px; } }\n@media (min-width: 1200px) { .b__hero__variant04__content-wrapper { padding-left: 0; } }"
+      }
+    },
+    {
+      "_type": "StatsVariant01",
+      "_key": "trust",
+      "block_category": "stats",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "",
+      "content": "",
+      "invert_text_color": true,
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "availability",
+          "heading": "24/7",
+          "description": "Emergency support"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "experience",
+          "heading": "15+",
+          "description": "Years serving our neighbors"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "pricing",
+          "heading": "Upfront",
+          "description": "Pricing before work begins"
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 40px 0; background-color: var(--t-plumbing-navy); --t-cp-base-white: #fff; --t-inverted-text-color: #fff;\n.b__stats__variant01__row--atf { display: none; }\n.container { margin-top: 0 !important; }\n.c__stats-card .c__heading { font-size: clamp(2rem, 4vw, 3.5rem); }\n.c__stats-card { color: #d7e8f5; }"
+      }
+    },
+    {
+      "_type": "ContentVariant03",
+      "_key": "services",
+      "block_category": "content",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "One team. Every plumbing fix.",
+      "description": "From quick repairs to bigger upgrades, we take care of the systems you rely on every day.",
+      "card_columns": "3",
+      "card_heading_tag": "h3",
+      "card_theme": "primary",
+      "justify_content": "start",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "leaks",
+          "heading": "Leak Detection & Repair",
+          "description": "Hidden leak or dripping faucet? We find the source, explain your options, and make a repair that lasts."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "drains",
+          "heading": "Drain & Sewer Cleaning",
+          "description": "Slow sinks and stubborn clogs don’t have to run your day. Get your drains moving freely again."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "heaters",
+          "heading": "Water Heater Services",
+          "description": "Reliable hot water starts here. Repairs, replacement, and tankless upgrades tailored to your home."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "fixtures",
+          "heading": "Faucets, Toilets & Fixtures",
+          "description": "Freshen up your kitchen or bathroom with properly installed fixtures and dependable everyday performance."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "pipes",
+          "heading": "Pipe Repair & Repiping",
+          "description": "From a small pipe repair to a full home upgrade, we help keep your plumbing ready for the years ahead."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "emergency",
+          "heading": "Emergency Plumbing",
+          "description": "When a plumbing problem can’t wait, call our team for help with the next available emergency appointment."
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-cp-base-white);\n.b__content__variant03__grid-row { --bs-gutter-x: 24px; --bs-gutter-y: 24px; }\n.c__text-card { height: 100%; border: 1px solid var(--t-border-color); border-radius: 20px; padding: 28px; background-color: var(--t-light-background-color); }\n.c__text-card__bar-wrapper { max-width: 48px; }"
+      }
+    },
+    {
+      "_type": "FeatureVariant03",
+      "_key": "about",
+      "block_category": "feature",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "The plumber you’ll feel good about calling.",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "about-copy",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "about-copy-text",
+              "text": "We’re a local team with a simple promise: treat your home like our own. That means showing up when we say we will, explaining the problem in plain language, and leaving your space as clean as we found it.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "align_items_center": true,
+      "card_heading_tag": "h3",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "quote",
+          "heading": "No surprises on your invoice",
+          "description": "You approve the scope and price before we pick up our tools.",
+          "icon_type": "svg",
+          "icon_color": "var(--t-primary-branding-color)",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 8h6M9 12h6M9 16h3\"/></svg>"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "respect",
+          "heading": "Respect for your home",
+          "description": "Shoe covers, careful work, and a tidy finish are part of the job.",
+          "icon_type": "svg",
+          "icon_color": "var(--t-primary-branding-color)",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m3 10 9-7 9 7v10H3Z\"/><path d=\"m8 14 3 3 5-5\"/></svg>"
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "care",
+          "heading": "People who pick up the phone",
+          "description": "Real answers from a friendly team, before and after the repair.",
+          "icon_type": "svg",
+          "icon_color": "var(--t-primary-branding-color)",
+          "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 13v-2a8 8 0 0 1 16 0v2\"/><rect x=\"3\" y=\"11\" width=\"4\" height=\"7\" rx=\"2\"/><rect x=\"17\" y=\"11\" width=\"4\" height=\"7\" rx=\"2\"/><path d=\"M19 18v1a2 2 0 0 1-2 2h-5\"/></svg>"
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "ContentVariant03",
+      "_key": "process",
+      "block_category": "content",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Back to normal in three simple steps.",
+      "description": "Getting help should be the easy part.",
+      "card_columns": "3",
+      "card_heading_tag": "h3",
+      "card_theme": "secondary",
+      "justify_content": "start",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "call",
+          "heading": "01 / Tell us what’s going on",
+          "description": "Give us a call. We’ll listen, ask a few helpful questions, and arrange a time that works for you."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "plan",
+          "heading": "02 / Get a clear plan",
+          "description": "Your plumber checks the problem and walks you through the repair and pricing before starting."
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "repair",
+          "heading": "03 / Get on with your day",
+          "description": "We complete the repair, test everything, clean up, and share tips to help keep things running smoothly."
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-cp-base-white);"
+      }
+    },
+    {
+      "_type": "TestimonialVariant01",
+      "_key": "review",
+      "block_category": "testimonial",
+      "enable_animations": false,
+      "heading": "“ClearFlow explained everything, gave us a price before starting, and had our hot water back the same afternoon. Friendly people, spotless work, and zero stress.”",
+      "person_name": "Jamie R.",
+      "person_title": "Chicago homeowner · Sample testimonial",
+      "use_global_testimonials": false,
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-light-background-color);\nblockquote { margin-bottom: 0; }"
+      }
+    },
+    {
+      "_type": "ContentVariant04",
+      "_key": "areas",
+      "block_category": "content",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Around the corner. Ready to help.",
+      "content_type": "richtext",
+      "content_max_width": "850",
+      "content": [
+        {
+          "_type": "block",
+          "_key": "area-copy",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "area-copy-text",
+              "text": "Proudly serving our neighbors across Chicago, Evanston, Oak Park, Skokie, and nearby communities. Not sure if you’re in our service area? Give us a call—we’re happy to check.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-cp-base-white);\ntext-align: center;"
+      }
+    },
+    {
+      "_type": "FaqVariant01",
+      "_key": "faq",
+      "block_category": "faq",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "A few answers before you call.",
+      "description": "Helpful details about booking, pricing, and what to expect.",
+      "repeater": [
+        {
+          "_type": "repeater_item",
+          "_key": "hours",
+          "heading": "Can I call outside regular business hours?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "hours-answer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "hours-answer-text",
+                  "text": "Yes. Our emergency line is available 24/7. Call (312) 555-0148 and we’ll discuss your situation and the next available appointment.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "price",
+          "heading": "Will I know the price before work starts?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "price-answer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "price-answer-text",
+                  "text": "Yes. Once we’ve assessed the issue, we explain the recommended repair and provide an upfront price for your approval. Any visit or diagnostic charge is explained when you book.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "same-day",
+          "heading": "Do you offer same-day appointments?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "same-day-answer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "same-day-answer-text",
+                  "text": "We do our best to offer same-day appointments whenever our schedule allows. Call us to check today’s availability.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "homes",
+          "heading": "Can you help with older homes?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "homes-answer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "homes-answer-text",
+                  "text": "Absolutely. Our team works with both older plumbing systems and modern fixtures. We’ll recommend practical options that suit your home.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "_type": "repeater_item",
+          "_key": "booking",
+          "heading": "How do I book a service visit?",
+          "content": [
+            {
+              "_type": "block",
+              "_key": "booking-answer",
+              "style": "normal",
+              "markDefs": [],
+              "children": [
+                {
+                  "_type": "span",
+                  "_key": "booking-answer-text",
+                  "text": "Call (312) 555-0148 or email hello@clearflow.example. Tell us what’s happening and where you’re located, and we’ll help arrange your visit.",
+                  "marks": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-light-background-color);"
+      }
+    },
+    {
+      "_type": "CtaVariant01",
+      "_key": "contact",
+      "block_category": "cta",
+      "heading_tag": "h2",
+      "enable_animations": false,
+      "heading": "Let’s get your home flowing again.",
+      "description": "A small fix or an urgent problem—start with a friendly conversation.<br />Call (312) 555-0148 · Emergency support available 24/7",
+      "description_tag": "p",
+      "theme": "primary",
+      "button_title": "Call (312) 555-0148",
+      "button_destination": "tel:+13125550148",
+      "button_theme": "inverted",
+      "button_two_title": "Email Our Team",
+      "button_two_destination": "mailto:hello@clearflow.example",
+      "button_two_theme": "inverted",
+      "scoped_css": {
+        "_type": "code",
+        "language": "scss",
+        "code": "padding: 80px 0; background-color: var(--t-cp-base-white);\n.b__cta__variant01__wrapper { background-color: var(--t-plumbing-navy); border-radius: 24px; }"
+      }
+    }
+  ]
+}
